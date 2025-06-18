@@ -31,7 +31,7 @@ export const shipComposition = {
   },
 
   movePlayerOnTopDownWithMouse(ship) {
-    if(!Phaser.Geom.Rectangle.Contains(ship.getBounds(), ship.aimX, ship.aimY)) {
+    if(!Phaser.Geom.Rectangle.Contains(ship.body, ship.aimX, ship.aimY)) {
       const targetDirectional = new Phaser.Math.Vector2(ship.aimX - ship.x, ship.aimY - ship.y).normalize();
       ship.currentDirectional.x += ship.rotationSpeed * (targetDirectional.x - ship.currentDirectional.x);
       ship.currentDirectional.y += ship.rotationSpeed * (targetDirectional.y - ship.currentDirectional.y);

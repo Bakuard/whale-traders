@@ -11,7 +11,7 @@
                  "gid":1,
                  "height":512,
                  "id":5,
-                 "name":"",
+                 "name":"islandGrass",
                  "properties":[
                         {
                          "name":"imageName",
@@ -29,7 +29,7 @@
                  "gid":2,
                  "height":512,
                  "id":6,
-                 "name":"",
+                 "name":"islandGround",
                  "properties":[
                         {
                          "name":"imageName",
@@ -63,7 +63,7 @@
                 {
                  "height":0,
                  "id":7,
-                 "name":"",
+                 "name":"worldCenter",
                  "point":true,
                  "rotation":0,
                  "type":"WorldCenter",
@@ -71,6 +71,18 @@
                  "width":0,
                  "x":562,
                  "y":272
+                }, 
+                {
+                 "height":0,
+                 "id":8,
+                 "name":"spawnPoint",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":192,
+                 "y":164
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -79,7 +91,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":8,
+ "nextobjectid":10,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

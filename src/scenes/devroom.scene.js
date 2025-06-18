@@ -4,7 +4,6 @@ import { backgroundComposition } from "@/compositions/Background.composition.js"
 import { devroomComposition } from "@/compositions/devroom.composition.js";
 import { shipComposition } from "@/compositions/ship.composition.js";
 import * as Config from "@/configs/gameplay.config.js";
-import { SHIP_ROTATION_SPEED } from "@/configs/gameplay.config.js";
 
 export class DevroomScene extends Phaser.Scene {
   constructor(playerStore) {
@@ -21,12 +20,16 @@ export class DevroomScene extends Phaser.Scene {
 
   create() {
     this.background = backgroundComposition.createBackgroundImage(this, this.cameras.main.width, this.cameras.main.height);
-    const [map, islandsLayer] = devroomComposition.createLevel(this);
+    const [map, islandsLayer, spawnPoint] = devroomComposition.createLevel(this);
+
+    const currentIsland = devroomComposition.getIslandByName(this.playerStore.getLastVisitedIsland);
+    const shipStartX = currentIsland ? currentIsland.x : spawnPoint.x;
+    const shipStartY = currentIsland ? currentIsland.y : spawnPoint.y;
 
     this.ship = shipComposition.createShip(
       this,
-      this.cameras.main.width / 2,
-      this.cameras.main.height / 2,
+      shipStartX,
+      shipStartY,
       Config.SHIP_DISPLAY_WIDTH,
       Config.SHIP_DISPLAY_HEIGHT,
       Config.SHIP_TOPDOWN_BODY_WIDTH,
@@ -35,12 +38,14 @@ export class DevroomScene extends Phaser.Scene {
       Config.SHIP_ROTATION_SPEED
     );
     shipComposition.configureCameraFollow(this, this.ship);
+
+    this.events.on('postupdate', () => devroomComposition.checkShipOverlapWithIsland(this.playerStore, this.ship));
   }
 
-  update() {
+  update(time, delta) {
     backgroundComposition.moveBackground(this.cameras.main, this.background);
     shipComposition.updateShipAim(this, this.ship);
     shipComposition.movePlayerOnTopDownWithMouse(this.ship);
-    devroomComposition.moveIslands();
+    devroomComposition.moveIslands(delta);
   }
 }
