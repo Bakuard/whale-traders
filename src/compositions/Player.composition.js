@@ -12,19 +12,19 @@ export const playerComposition = {
     scene.anims.create({
       key: "player_wait",
       frames: scene.anims.generateFrameNames("player_wait", { start: 1, end: 8 }),
-      frameRate: 10,
+      frameRate: 2,
       repeat: -1
     });
     scene.anims.create({
       key: "player_move",
       frames: scene.anims.generateFrameNames("player_move", { start: 1, end: 8 }),
-      frameRate: 10,
+      frameRate: 12,
       repeat: -1
     });
     scene.anims.create({
       key: "player_jump",
       frames: scene.anims.generateFrameNames("player_jump", { start: 1, end: 8 }),
-      frameRate: 8,
+      frameRate: 16,
       repeat: 1
     });
   },
