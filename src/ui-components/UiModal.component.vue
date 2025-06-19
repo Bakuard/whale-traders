@@ -133,7 +133,7 @@ const contentStyles = computed(() => {
   }
   &__content {
     box-sizing: border-box;
-    background: #424242;
+    background: #858f64;
     border-radius: 12px;
     overflow-y: auto;
     padding: 20px;
