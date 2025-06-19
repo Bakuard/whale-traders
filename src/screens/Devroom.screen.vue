@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onBeforeUnmount, onMounted, ref } from "vue";
 import Phaser from "phaser";
 import { DevroomScene } from "@/scenes/devroom.scene";
 import Preloader from "@/ui-components/Preloader.component.vue";
@@ -40,6 +40,11 @@ onMounted(() => {
     },
   });
 });
+
+onBeforeUnmount(() => {
+  playerStore.closeMessage();
+  game?.destroy(true)
+});
 </script>
 
 <template>
@@ -50,7 +55,6 @@ onMounted(() => {
         v-if="playerStore.alert.isShow"
         class="game-screen__alert"
         :color="`${color}-darken-3`"
-        closable
         @close="playerStore.closeMessage"
       >
         <div class="game-screen__alert-content">

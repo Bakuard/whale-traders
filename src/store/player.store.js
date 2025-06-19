@@ -45,16 +45,20 @@ export const usePlayer = defineStore("player", {
       },
     ],
     alert: {
-      isShow: true,
-      isShowAction: true,
+      isShow: false,
+      isShowAction: false,
       text: 'New record was added in journal'
     },
     currentColor: 'green',
+    lastVisitedIsland: null
   }),
   getters: {
     currentAbility(state) {
       return state.abilities.find((ability) => ability.isActive);
     },
+    getLastVisitedIsland(state) {
+      return state.lastVisitedIsland;
+    }
   },
   actions: {
     increase(value, maxHealth) {
@@ -72,5 +76,8 @@ export const usePlayer = defineStore("player", {
       this.alert.isShowAction = isShowAction;
       this.alert.text = message;
     },
+    setLastVisitedIsland(islandName) {
+      this.lastVisitedIsland = islandName;
+    }
   },
 });

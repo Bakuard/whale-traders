@@ -49,10 +49,7 @@ onMounted(() => {
   });
 });
 
-onBeforeUnmount(() => {
-  EventBus.off(EventNames.GO_TO_TOPDOWN);
-  game?.destroy(true);
-});
+onBeforeUnmount(() => game?.destroy(true));
 </script>
 
 <template>
@@ -74,9 +71,6 @@ onBeforeUnmount(() => {
       >
         <div class="platformer-screen__alert-content">
           <span>{{ playerStore.alert.text }}</span>
-          <v-btn v-if="playerStore.alert.isShowAction" :color="`${color}-darken-4`" @click="goToWhale">
-            Ок
-          </v-btn>
         </div>
       </v-alert>
     </UiAnchor>

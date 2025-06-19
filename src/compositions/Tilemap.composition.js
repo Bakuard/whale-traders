@@ -2,12 +2,20 @@ export const tilemapComposition = {
   createObjectLayer(scene, map, layerName) {
     const objLayerMeta = map.getObjectLayer(layerName);
     const objLayer = scene.physics.add.staticGroup();
-    objLayerMeta.objects.forEach(obj => {
-      const imageName = extractPropertyValue(obj, "imageName");
-      objLayer.get(obj.x + obj.width / 2, obj.y - obj.height / 2, imageName)
-        .setSize(obj.width, obj.height);
+    objLayerMeta.objects.forEach(objMeta => {
+      const obj = objLayer.get();
+      extractProperties(objMeta, obj);
+      obj.setTexture(obj.imageName);
     });
     return objLayer;
+  },
+
+  extractFromObjectLayer(map, layerName, objectName) {
+    const objLayerMeta = map.getObjectLayer(layerName);
+    const objMeta = objLayerMeta.objects.find(obj => obj.name === objectName);
+    if(objMeta)
+      return extractProperties(objMeta, {});
+    throw `Fail to find object with name '${objectName}' on layer '${layerName}'`;
   },
 
   createTileLayer(map, tilesetName, layerId, collisionIndexes) {
@@ -18,6 +26,14 @@ export const tilemapComposition = {
   }
 };
 
-function extractPropertyValue(tileMeta, propertyName) {
-  return tileMeta.properties?.find(property => property.name === propertyName)?.value;
+function extractProperties(objMeta, obj) {
+  objMeta.properties?.forEach(property => obj[property.name] = property.value);
+  obj.name = objMeta.name;
+  obj.x = objMeta.x + objMeta.width / 2;
+  obj.y = objMeta.y - objMeta.height / 2;
+  obj.width = objMeta.width;
+  obj.height = objMeta.height;
+  obj.type = objMeta.type;
+  obj.setBodySize?.(objMeta.width, objMeta.height);
+  return obj;
 };
