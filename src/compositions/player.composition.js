@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { PLAYER_JUMP_MULTIPLICATOR, PLAYER_FALL_MULTIPLICATOR } from "@/configs/gameplay.config.js";
+import * as Config from "@/configs/gameplay.config.js";
 
 export const playerComposition = {
   preloadPlayerAnimation(scene) {
@@ -41,12 +41,26 @@ export const playerComposition = {
     player.depth = 100;
     player.maxHealth = maxHealth;
     player.currentHealth = maxHealth;
+    player.jumpMultiplicator = Config.PLAYER_JUMP_MULTIPLICATOR;
+    player.fallMultiplicator = Config.PLAYER_FALL_MULTIPLICATOR;
     return player;
   },
 
   configureCameraFollow(scene, player, deadzoneWidth, deadzoneHeight) {
     scene.cameras.main.startFollow(player);
     scene.cameras.main.setDeadzone(deadzoneWidth, deadzoneHeight);
+  },
+
+  switchChip(player, playerStore, userInput) {
+    if (Phaser.Input.Keyboard.JustDown(userInput.activateJumpChip)) {
+      playerStore.switchAbility(player, "jump");
+    } else if (Phaser.Input.Keyboard.JustDown(userInput.activateFireChip)) {
+      playerStore.switchAbility(player, "fire");
+    } else if (Phaser.Input.Keyboard.JustDown(userInput.activateGravityChip)) {
+      playerStore.switchAbility(player, "gravity");
+    } else if (Phaser.Input.Keyboard.JustDown(userInput.activateFreezeChip)) {
+      playerStore.switchAbility(player, "freeze");
+    }
   },
 
   movePlayerOnTopDown(player, userInput) {
@@ -64,8 +78,12 @@ export const playerComposition = {
     if (player.body.velocity.x !== 0) player.setFlipX(userInput.left.isDown);
   },
 
-  movePlayerOnPlatformers(player, userInput) {
-    if (userInput.up.isDown && player.body.blocked.down) player.body.velocity.y = -player.speed * PLAYER_JUMP_MULTIPLICATOR;
+  movePlayerOnPlatformers(player, playerStore, userInput) {
+    if (userInput.up.isDown && player.body.blocked.down && !playerStore.gravityAbility.isActive) {
+      player.body.velocity.y = -player.speed * playerStore.jumpAbility.params.jumpMultiplicator;
+    } else if (playerStore.gravityAbility.isActive) {
+      player.body.velocity.y = Config.ANTI_GRAVITY;
+    }
 
     player.body.velocity.x = (userInput.right.isDown - userInput.left.isDown) * player.speed;
 
@@ -75,7 +93,7 @@ export const playerComposition = {
       player.anims.play("player_move", true);
     } else {
       player.anims.play("player_jump", true);
-      player.body.velocity.x *= PLAYER_FALL_MULTIPLICATOR;
+      player.body.velocity.x *= playerStore.jumpAbility.params.fallMultiplicator;
     }
 
     if (player.body.velocity.x !== 0) player.setFlipX(userInput.left.isDown);
@@ -87,6 +105,10 @@ export const playerComposition = {
       right: Phaser.Input.Keyboard.KeyCodes.D,
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
+      activateJumpChip: Phaser.Input.Keyboard.KeyCodes.ONE,
+      activateFireChip: Phaser.Input.Keyboard.KeyCodes.TWO,
+      activateGravityChip: Phaser.Input.Keyboard.KeyCodes.THREE,
+      activateFreezeChip: Phaser.Input.Keyboard.KeyCodes.FOUR,
     });
   },
 };

@@ -35,12 +35,12 @@
   </data>
  </layer>
  <objectgroup id="3" name="chips_layer">
-  <object id="2" name="JumpChip" type="Chip" gid="1" x="1003.27" y="-853.788" width="49" height="49">
+  <object id="2" name="JumpChip" type="Chip" gid="1" x="991.149" y="-144.697" width="49" height="49">
    <properties>
     <property name="imageName" value="chip"/>
    </properties>
   </object>
-  <object id="3" name="FreezeChip" type="Chip" gid="1" x="429.5" y="-514.5" width="49" height="49">
+  <object id="3" name="FreezeChip" type="Chip" gid="1" x="414.348" y="-126.621" width="49" height="49">
    <properties>
     <property name="imageName" value="chip"/>
    </properties>
@@ -50,7 +50,7 @@
     <property name="imageName" value="chip"/>
    </properties>
   </object>
-  <object id="5" name="GravityChip" type="Chip" gid="1" x="720.955" y="-1436.62" width="49" height="49">
+  <object id="5" name="GravityChip" type="Chip" gid="1" x="575.5" y="-145.712" width="49" height="49">
    <properties>
     <property name="imageName" value="chip"/>
    </properties>
