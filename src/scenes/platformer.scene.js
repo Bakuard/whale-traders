@@ -50,7 +50,8 @@ export class PlatformerScene extends Phaser.Scene {
   }
 
   update() {
-    playerComposition.movePlayerOnPlatformers(this.player, this.userInput);
+    playerComposition.movePlayerOnPlatformers(this.player, this.playerStore, this.userInput);
     platformerComposition.moveParallaxImages(this.camera, this.backgroundNear, this.backgroundFar, this);
+    playerComposition.switchChip(this.player, this.playerStore, this.userInput);
   }
 }

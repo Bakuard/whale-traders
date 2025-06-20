@@ -11,13 +11,13 @@ const isActive = (ability) => {
 <template>
   <div class="abilities-set">
     <v-chip
-      v-for="(ability, i) in playerStore.abilities"
+      v-for="ability in playerStore.abilities"
       :key="ability.name"
       :prepend-icon="ability.icon"
       :variant="isActive(ability) ? 'elevated' : 'outlined'" size="x-large"
       :color="`${color}-darken-4`"
     >
-      {{ i + 1 }}
+      {{ ability.key }}
     </v-chip>
   </div>
 </template>
