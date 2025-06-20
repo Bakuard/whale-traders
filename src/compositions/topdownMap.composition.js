@@ -1,4 +1,4 @@
-import {tilemapComposition } from "@/compositions/Tilemap.composition.js";
+import {tilemapComposition } from "@/compositions/tilemap.composition.js";
 
 export const topdownMapComposition = {
   preloadLevel(scene) {

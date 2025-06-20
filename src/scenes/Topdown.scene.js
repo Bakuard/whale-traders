@@ -1,8 +1,8 @@
 import * as Phaser from "phaser";
-import {playerComposition} from "@/compositions/Player.composition.js";
+import {playerComposition} from "@/compositions/player.composition.js";
 import {sceneComposition} from "@/compositions/scene.composition.js";
-import {backgroundComposition} from "@/compositions/Background.composition.js";
-import {topdownMapComposition} from "@/compositions/TopdownMap.composition.js";
+import {backgroundComposition} from "@/compositions/background.composition.js";
+import {topdownMapComposition} from "@/compositions/topdownMap.composition.js";
 import {EventBus} from "@/utils/utils.js";
 import * as Config from "@/configs/gameplay.config.js";
 import * as EventNames from "@/configs/eventNames.config.js";

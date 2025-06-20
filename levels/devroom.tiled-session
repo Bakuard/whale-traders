@@ -1,4 +1,8 @@
 {
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
     "activeFile": "",
     "expandedProjectPaths": [
         "."
@@ -6,7 +10,8 @@
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "D:/JS/whale-traders/public/assets/levels/tilesets/heart_tiles.tsx": {
             "dynamicWrapping": false,
@@ -30,20 +35,72 @@
         },
         "platformer.tmx": {
             "scale": 0.62640625,
-            "selectedLayer": 3,
+            "selectedLayer": 0,
             "viewCenter": {
                 "x": -960.2394612122723,
                 "y": 959.4412571713643
             }
         },
         "platformer.tmx#door_tiles": {
+            "dynamicWrapping": true,
             "scaleInDock": 1
         },
         "platformer.tmx#heart_level": {
+            "dynamicWrapping": true,
             "scaleInDock": 1
         },
         "platformer.tmx#platform": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "platformer.tmx#platform_tiles": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "platforms1.json": {
+            "scale": 0.33,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 295.4545454545457,
+                "y": -545.4545454545455
+            }
+        },
+        "platforms1.json#chip_tiles": {
             "scaleInDock": 1
+        },
+        "platforms1.json#platform_tiles": {
+            "scaleInDock": 1
+        },
+        "platforms1.tmx": {
+            "expandedObjectLayers": [
+                2,
+                3
+            ],
+            "scale": 0.75,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 930,
+                "y": -148
+            }
+        },
+        "platforms1.tmx#chip": {
+            "scaleInEditor": 1
+        },
+        "platforms1.tmx#chip_tiles": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "platforms1.tmx#chips": {
+            "dynamicWrapping": true,
+            "scaleInEditor": 1
+        },
+        "platforms1.tmx#platform_tiles": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "topdown.tmx": {
             "expandedObjectLayers": [
@@ -64,23 +121,26 @@
         }
     },
     "last.exportedFilePath": "D:/JS/whale-traders/public/assets/levels/tilemaps",
-    "last.imagePath": "D:/JS/whale-traders/public/assets/levels/tiles",
+    "last.imagePath": "D:/JS/whale-traders/public/assets/levels/tiles/platforms",
+    "map.fixedSize": false,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
-    "map.lastUsedFormat": "tmx",
-    "map.tileHeight": 60,
-    "map.tileWidth": 60,
+    "map.lastUsedFormat": "json",
+    "map.tileHeight": 100,
+    "map.tileWidth": 100,
     "openFiles": [
     ],
     "project": "devroom.tiled-project",
     "recentFiles": [
+        "platforms1.tmx",
         "devroom.tmx",
+        "platforms1.json",
         "platformer.tmx",
         "topdown.tmx"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
-        "height": 60,
-        "width": 60
+        "height": 100,
+        "width": 100
     },
-    "tileset.type": 1
+    "tileset.type": 0
 }
