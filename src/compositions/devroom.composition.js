@@ -1,4 +1,4 @@
-import {tilemapComposition } from "@/compositions/Tilemap.composition.js";
+import { tilemapComposition } from "@/compositions/tilemap.composition.js";
 import { ISLAND_SPEED } from "@/configs/gameplay.config.js";
 import Phaser from "phaser";
 
@@ -12,8 +12,8 @@ export const devroomComposition = {
   createLevel(scene) {
     const map = scene.make.tilemap({ key: "devroom-tilemap" });
 
-    this.worldCenter = tilemapComposition.extractFromObjectLayer(map, "points_layer", "worldCenter");
-    this.spawnPoint = tilemapComposition.extractFromObjectLayer(map, "points_layer", "spawnPoint");
+    this.worldCenter = tilemapComposition.getFromObjectLayer(map, "points_layer", "worldCenter");
+    this.spawnPoint = tilemapComposition.getFromObjectLayer(map, "points_layer", "spawnPoint");
 
     this.islandsLayer = tilemapComposition.createObjectLayer(scene, map, "islands_layer");
     this.islandsLayer.children.iterate(island => {

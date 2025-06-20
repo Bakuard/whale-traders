@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="100" tileheight="100" infinite="1" nextlayerid="4" nextobjectid="6">
+ <editorsettings>
+  <export target="../public/assets/levels/tilemaps/platforms1.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" name="chip_tiles" tilewidth="49" tileheight="49" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="../public/assets/img/chip.jpg" width="49" height="49"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="2" name="platform_tiles" tilewidth="100" tileheight="100" tilecount="5" columns="5">
+  <image source="../public/assets/levels/tiles/platforms/platform_tiles.png" width="505" height="100"/>
+ </tileset>
+ <layer id="1" name="platform_layer" width="30" height="20">
+  <data encoding="csv">
+   <chunk x="0" y="-16" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,2,2,2,2,2,2,2,2,2,2,2,2,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,
+0,2,2,2,0,0,0,0,0,0,0,2,2,2,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,2,2,2,0,0,0,0,0,0,0,2,2,2,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,2,2,2,0,0,0,0,0,0,0,2,2,2,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+</chunk>
+  </data>
+ </layer>
+ <objectgroup id="3" name="chips_layer">
+  <object id="2" name="JumpChip" type="Chip" gid="1" x="1003.27" y="-853.788" width="49" height="49">
+   <properties>
+    <property name="imageName" value="chip"/>
+   </properties>
+  </object>
+  <object id="3" name="FreezeChip" type="Chip" gid="1" x="429.5" y="-514.5" width="49" height="49">
+   <properties>
+    <property name="imageName" value="chip"/>
+   </properties>
+  </object>
+  <object id="4" name="FireChip" type="Chip" gid="1" x="1232.62" y="-108.379" width="49" height="49">
+   <properties>
+    <property name="imageName" value="chip"/>
+   </properties>
+  </object>
+  <object id="5" name="GravityChip" type="Chip" gid="1" x="720.955" y="-1436.62" width="49" height="49">
+   <properties>
+    <property name="imageName" value="chip"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="2" name="points_layer">
+  <object id="1" name="spawnPoint" x="850" y="-163.5">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

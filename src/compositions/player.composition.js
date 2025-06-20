@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import {PLAYER_JUMP_MULTIPLICATOR, PLAYER_FALL_MULTIPLICATOR} from "@/configs/gameplay.config.js";
+import { PLAYER_JUMP_MULTIPLICATOR, PLAYER_FALL_MULTIPLICATOR } from "@/configs/gameplay.config.js";
 
 export const playerComposition = {
   preloadPlayerAnimation(scene) {
@@ -13,24 +13,25 @@ export const playerComposition = {
       key: "player_wait",
       frames: scene.anims.generateFrameNames("player_wait", { start: 1, end: 8 }),
       frameRate: 2,
-      repeat: -1
+      repeat: -1,
     });
     scene.anims.create({
       key: "player_move",
       frames: scene.anims.generateFrameNames("player_move", { start: 1, end: 8 }),
       frameRate: 12,
-      repeat: -1
+      repeat: -1,
     });
     scene.anims.create({
       key: "player_jump",
       frames: scene.anims.generateFrameNames("player_jump", { start: 1, end: 8 }),
       frameRate: 16,
-      repeat: 1
+      repeat: 1,
     });
   },
 
   createPlayer(scene, x, y, displayWidth, displayHeight, bodyWidth, bodyHeight, speed, maxHealth) {
-    const player = scene.physics.add.sprite(x, y, "player_wait", "1")
+    const player = scene.physics.add
+      .sprite(x, y, "player_wait", "1")
       .setBodySize(bodyWidth, bodyHeight)
       .setDisplaySize(displayWidth, displayHeight)
       .setOrigin(0.5, 1)
@@ -51,34 +52,33 @@ export const playerComposition = {
   movePlayerOnTopDown(player, userInput) {
     player.body.velocity.x = userInput.right.isDown - userInput.left.isDown;
     player.body.velocity.y = userInput.down.isDown - userInput.up.isDown;
-    player.body.velocity.normalize().scale(player.speed);
+    if (player.body.velocity.y !== 0 && player.body.velocity.x !== 0) {
+      player.body.velocity.x *= 0.707106; //sin 45 degree
+      player.body.velocity.y *= 0.707106; //cos 45 degree
+    }
+    player.body.velocity.scale(player.speed);
 
-    if(player.body.velocity.equals(Phaser.Math.Vector2.ZERO))
-      player.anims.play("player_wait", true);
-    else
-      player.anims.play("player_move", true);
+    if (player.body.velocity.equals(Phaser.Math.Vector2.ZERO)) player.anims.play("player_wait", true);
+    else player.anims.play("player_move", true);
 
-    if(player.body.velocity.x !== 0)
-      player.setFlipX(userInput.left.isDown);
+    if (player.body.velocity.x !== 0) player.setFlipX(userInput.left.isDown);
   },
 
   movePlayerOnPlatformers(player, userInput) {
-    if(userInput.up.isDown && player.body.blocked.down)
-      player.body.velocity.y = -player.speed * PLAYER_JUMP_MULTIPLICATOR;
+    if (userInput.up.isDown && player.body.blocked.down) player.body.velocity.y = -player.speed * PLAYER_JUMP_MULTIPLICATOR;
 
     player.body.velocity.x = (userInput.right.isDown - userInput.left.isDown) * player.speed;
 
-    if(player.body.velocity.equals(Phaser.Math.Vector2.ZERO)) {
+    if (player.body.velocity.equals(Phaser.Math.Vector2.ZERO)) {
       player.anims.play("player_wait", true);
-    } else if(player.body.blocked.down && player.body.velocity.y === 0) {
+    } else if (player.body.blocked.down && player.body.velocity.y === 0) {
       player.anims.play("player_move", true);
     } else {
       player.anims.play("player_jump", true);
       player.body.velocity.x *= PLAYER_FALL_MULTIPLICATOR;
     }
 
-    if(player.body.velocity.x !== 0)
-      player.setFlipX(userInput.left.isDown);
+    if (player.body.velocity.x !== 0) player.setFlipX(userInput.left.isDown);
   },
 
   createUserInput(scene) {
@@ -88,5 +88,5 @@ export const playerComposition = {
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
     });
-  }
+  },
 };

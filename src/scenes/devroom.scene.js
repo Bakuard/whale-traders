@@ -1,6 +1,6 @@
 import * as Phaser from "phaser";
 import { sceneComposition } from "@/compositions/scene.composition.js";
-import { backgroundComposition } from "@/compositions/Background.composition.js";
+import { backgroundComposition } from "@/compositions/background.composition.js";
 import { devroomComposition } from "@/compositions/devroom.composition.js";
 import { shipComposition } from "@/compositions/ship.composition.js";
 import * as Config from "@/configs/gameplay.config.js";

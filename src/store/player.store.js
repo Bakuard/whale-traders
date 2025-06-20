@@ -5,52 +5,31 @@ export const usePlayer = defineStore("player", {
   state: () => ({
     currentHealth: PLAYER_CURRENT_HEALTH,
     currentLevel: "BlueWhale",
-    abilities: [
-      {
-        name: "jump",
-        isActive: false,
-        icon: "move_up",
-      },
-      {
-        name: "fire",
-        isActive: false,
-        icon: "local_fire_department",
-      },
-      {
-        name: "gravity",
-        isActive: false,
-        icon: "arrow_upward",
-      },
-      {
-        name: "freeze",
-        isActive: false,
-        icon: "pause_circle",
-      },
-    ],
+    abilities: [],
     journal: [
       {
-        title: 'Blue Whale story',
-        text: 'Blue Whale story text...',
+        title: "Blue Whale story",
+        text: "Blue Whale story text...",
         id: 0,
       },
       {
-        title: 'Blue Whale story',
-        text: 'Blue Whale story text...',
+        title: "Blue Whale story",
+        text: "Blue Whale story text...",
         id: 1,
       },
       {
-        title: 'Blue Whale story',
-        text: 'Blue Whale story text...',
+        title: "Blue Whale story",
+        text: "Blue Whale story text...",
         id: 2,
       },
     ],
     alert: {
       isShow: false,
       isShowAction: false,
-      text: 'New record was added in journal'
+      text: "New record was added in journal",
     },
-    currentColor: 'cyan',
-    lastVisitedIsland: null
+    currentColor: "cyan",
+    lastVisitedIsland: null,
   }),
   getters: {
     currentAbility(state) {
@@ -58,7 +37,7 @@ export const usePlayer = defineStore("player", {
     },
     getLastVisitedIsland(state) {
       return state.lastVisitedIsland;
-    }
+    },
   },
   actions: {
     increase(value, maxHealth) {
@@ -78,6 +57,18 @@ export const usePlayer = defineStore("player", {
     },
     setLastVisitedIsland(islandName) {
       this.lastVisitedIsland = islandName;
-    }
+    },
+    addJumpAbility() {
+      this.abilities.push({ name: "jump", isActive: false, icon: "move_up" });
+    },
+    addFireAbility() {
+      this.abilities.push({ name: "fire", isActive: false, icon: "local_fire_department" });
+    },
+    addGravityAbility() {
+      this.abilities.push({ name: "gravity", isActive: false, icon: "arrow_upward" });
+    },
+    addFreezeAbility() {
+      this.abilities.push({ name: "freeze", isActive: false, icon: "pause_circle" });
+    },
   },
 });
