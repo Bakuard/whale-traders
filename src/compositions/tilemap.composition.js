@@ -33,7 +33,7 @@ function extractProperties(objMeta, obj) {
   obj.width = objMeta.width;
   obj.height = objMeta.height;
   obj.type = objMeta.type;
-  obj.setBodySize?.(objMeta.width, objMeta.height);
-  obj.body?.updateFromGameObject();
+  obj.body?.setSize(objMeta.width, objMeta.height);
+  obj.body?.reset(obj.x, obj.y);
   return obj;
 }

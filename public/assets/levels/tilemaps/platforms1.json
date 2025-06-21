@@ -58,8 +58,8 @@
                  "type":"Chip",
                  "visible":true,
                  "width":49,
-                 "x":991.148787878788,
-                 "y":-144.697090909091
+                 "x":913.149,
+                 "y":-128.697
                 }, 
                 {
                  "gid":1,
@@ -76,8 +76,8 @@
                  "type":"Chip",
                  "visible":true,
                  "width":49,
-                 "x":414.348484848485,
-                 "y":-126.621212121212
+                 "x":386.348,
+                 "y":-120.621
                 }, 
                 {
                  "gid":1,
@@ -94,8 +94,8 @@
                  "type":"Chip",
                  "visible":true,
                  "width":49,
-                 "x":1232.62121212121,
-                 "y":-108.378787878788
+                 "x":1062.62,
+                 "y":-128.379
                 }, 
                 {
                  "gid":1,
@@ -112,8 +112,55 @@
                  "type":"Chip",
                  "visible":true,
                  "width":49,
-                 "x":575.5,
-                 "y":-145.712121212121
+                 "x":577.5,
+                 "y":-133.712
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
+         "name":"fire_layer",
+         "objects":[
+                {
+                 "gid":7,
+                 "height":100,
+                 "id":7,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"fire"
+                        }],
+                 "rotation":0,
+                 "type":"Fire",
+                 "visible":true,
+                 "width":100,
+                 "x":1246,
+                 "y":-300
+                }, 
+                {
+                 "gid":7,
+                 "height":100,
+                 "id":10,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"fire"
+                        }],
+                 "rotation":0,
+                 "type":"Fire",
+                 "visible":true,
+                 "width":100,
+                 "x":198,
+                 "y":-100
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -135,8 +182,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":850,
-                 "y":-163.5
+                 "x":778,
+                 "y":-125.5
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -144,8 +191,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":4,
- "nextobjectid":6,
+ "nextlayerid":5,
+ "nextobjectid":11,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
@@ -185,6 +232,29 @@
          "spacing":0,
          "tilecount":5,
          "tileheight":100,
+         "tilewidth":100
+        }, 
+        {
+         "columns":0,
+         "firstgid":7,
+         "grid":
+            {
+             "height":1,
+             "orientation":"orthogonal",
+             "width":1
+            },
+         "margin":0,
+         "name":"obstacle_tiles",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":100,
+         "tiles":[
+                {
+                 "id":0,
+                 "image":"..\/tiles\/fire.png",
+                 "imageheight":100,
+                 "imagewidth":100
+                }],
          "tilewidth":100
         }],
  "tilewidth":100,

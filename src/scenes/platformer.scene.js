@@ -17,11 +17,12 @@ export class PlatformerScene extends Phaser.Scene {
   }
 
   create() {
-    const [platformsLayer, chipsLayer, spawnPoint, backgroundNear, backgroundFar] = platformerComposition.createLevel(this);
+    const [platformsLayer, chipsLayer, fireLayer, spawnPoint, backgroundNear, backgroundFar] = platformerComposition.createLevel(this);
 
     this.camera = this.cameras.main;
     this.backgroundNear = backgroundNear;
     this.backgroundFar = backgroundFar;
+    this.fireLayer = fireLayer;
 
     this.userInput = playerComposition.createUserInput(this);
     playerComposition.preparePlayerAnimation(this);
@@ -33,25 +34,23 @@ export class PlatformerScene extends Phaser.Scene {
       Config.PLAYER_DISPLAY_HEIGHT,
       Config.PLAYER_PLATFORM_BODY_WIDTH,
       Config.PLAYER_PLATFORM_BODY_HEIGHT,
-      Config.PLAYER_SPEED,
-      Config.PLAYER_MAX_HEALTH
+      Config.PLAYER_SPEED
     );
 
     playerComposition.configureCameraFollow(this, this.player, this.cameras.main.width / 4, this.cameras.main.height / 4);
+
     this.physics.add.collider(this.player, platformsLayer);
     this.physics.add.overlap(this.player, chipsLayer, (player, chip) => {
-      chip.setActive(false).setVisible(false);
-      chip.body.enable = false;
-      if (chip.name == "JumpChip") this.playerStore.addJumpAbility();
-      else if (chip.name == "FireChip") this.playerStore.addFireAbility();
-      else if (chip.name == "FreezeChip") this.playerStore.addFreezeAbility();
-      else if (chip.name == "GravityChip") this.playerStore.addGravityAbility();
+      playerComposition.onChipOverlap(player, chip, this.playerStore);
     });
+    this.fireCollider = this.physics.add.collider(this.player, this.fireLayer, (player) =>
+      playerComposition.onFireCollision(this, player, this.playerStore)
+    );
   }
 
   update() {
     playerComposition.movePlayerOnPlatformers(this.player, this.playerStore, this.userInput);
     platformerComposition.moveParallaxImages(this.camera, this.backgroundNear, this.backgroundFar, this);
-    playerComposition.switchChip(this.player, this.playerStore, this.userInput);
+    playerComposition.switchChip(this.player, this.playerStore, this.userInput, this.fireCollider);
   }
 }

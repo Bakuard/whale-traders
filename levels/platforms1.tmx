@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="100" tileheight="100" infinite="1" nextlayerid="4" nextobjectid="6">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="100" tileheight="100" infinite="1" nextlayerid="5" nextobjectid="11">
  <editorsettings>
   <export target="../public/assets/levels/tilemaps/platforms1.json" format="json"/>
  </editorsettings>
@@ -11,6 +11,12 @@
  </tileset>
  <tileset firstgid="2" name="platform_tiles" tilewidth="100" tileheight="100" tilecount="5" columns="5">
   <image source="../public/assets/levels/tiles/platforms/platform_tiles.png" width="505" height="100"/>
+ </tileset>
+ <tileset firstgid="7" name="obstacle_tiles" tilewidth="100" tileheight="100" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="../public/assets/levels/tiles/fire.png" width="100" height="100"/>
+  </tile>
  </tileset>
  <layer id="1" name="platform_layer" width="30" height="20">
   <data encoding="csv">
@@ -35,29 +41,41 @@
   </data>
  </layer>
  <objectgroup id="3" name="chips_layer">
-  <object id="2" name="JumpChip" type="Chip" gid="1" x="991.149" y="-144.697" width="49" height="49">
+  <object id="2" name="JumpChip" type="Chip" gid="1" x="913.149" y="-128.697" width="49" height="49">
    <properties>
     <property name="imageName" value="chip"/>
    </properties>
   </object>
-  <object id="3" name="FreezeChip" type="Chip" gid="1" x="414.348" y="-126.621" width="49" height="49">
+  <object id="3" name="FreezeChip" type="Chip" gid="1" x="386.348" y="-120.621" width="49" height="49">
    <properties>
     <property name="imageName" value="chip"/>
    </properties>
   </object>
-  <object id="4" name="FireChip" type="Chip" gid="1" x="1232.62" y="-108.379" width="49" height="49">
+  <object id="4" name="FireChip" type="Chip" gid="1" x="1062.62" y="-128.379" width="49" height="49">
    <properties>
     <property name="imageName" value="chip"/>
    </properties>
   </object>
-  <object id="5" name="GravityChip" type="Chip" gid="1" x="575.5" y="-145.712" width="49" height="49">
+  <object id="5" name="GravityChip" type="Chip" gid="1" x="577.5" y="-133.712" width="49" height="49">
    <properties>
     <property name="imageName" value="chip"/>
    </properties>
   </object>
  </objectgroup>
+ <objectgroup id="4" name="fire_layer">
+  <object id="7" type="Fire" gid="7" x="1246" y="-300" width="100" height="100">
+   <properties>
+    <property name="imageName" value="fire"/>
+   </properties>
+  </object>
+  <object id="10" type="Fire" gid="7" x="198" y="-100" width="100" height="100">
+   <properties>
+    <property name="imageName" value="fire"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup id="2" name="points_layer">
-  <object id="1" name="spawnPoint" x="850" y="-163.5">
+  <object id="1" name="spawnPoint" x="778" y="-125.5">
    <point/>
   </object>
  </objectgroup>

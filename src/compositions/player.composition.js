@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import * as Config from "@/configs/gameplay.config.js";
+import { BOUNCE_FROM_FIRE_DURATION_IN_MILLIS } from "@/configs/gameplay.config.js";
 
 export const playerComposition = {
   preloadPlayerAnimation(scene) {
@@ -29,7 +30,7 @@ export const playerComposition = {
     });
   },
 
-  createPlayer(scene, x, y, displayWidth, displayHeight, bodyWidth, bodyHeight, speed, maxHealth) {
+  createPlayer(scene, x, y, displayWidth, displayHeight, bodyWidth, bodyHeight, speed) {
     const player = scene.physics.add
       .sprite(x, y, "player_wait", "1")
       .setBodySize(bodyWidth, bodyHeight)
@@ -39,8 +40,7 @@ export const playerComposition = {
       .refreshBody();
     player.speed = speed;
     player.depth = 100;
-    player.maxHealth = maxHealth;
-    player.currentHealth = maxHealth;
+    player.canMove = true;
     player.jumpMultiplicator = Config.PLAYER_JUMP_MULTIPLICATOR;
     player.fallMultiplicator = Config.PLAYER_FALL_MULTIPLICATOR;
     return player;
@@ -51,16 +51,35 @@ export const playerComposition = {
     scene.cameras.main.setDeadzone(deadzoneWidth, deadzoneHeight);
   },
 
-  switchChip(player, playerStore, userInput) {
+  switchChip(player, playerStore, userInput, fireCollider) {
     if (Phaser.Input.Keyboard.JustDown(userInput.activateJumpChip)) {
-      playerStore.switchAbility(player, "jump");
+      playerStore.switchAbility(player, "jump", fireCollider);
     } else if (Phaser.Input.Keyboard.JustDown(userInput.activateFireChip)) {
-      playerStore.switchAbility(player, "fire");
+      playerStore.switchAbility(player, "fire", fireCollider);
     } else if (Phaser.Input.Keyboard.JustDown(userInput.activateGravityChip)) {
-      playerStore.switchAbility(player, "gravity");
+      playerStore.switchAbility(player, "gravity", fireCollider);
     } else if (Phaser.Input.Keyboard.JustDown(userInput.activateFreezeChip)) {
-      playerStore.switchAbility(player, "freeze");
+      playerStore.switchAbility(player, "freeze", fireCollider);
     }
+  },
+
+  onChipOverlap(player, chip, playerStore) {
+    chip.setActive(false).setVisible(false);
+    chip.body.enable = false;
+    if (chip.name == "JumpChip") playerStore.addJumpAbility();
+    else if (chip.name == "FireChip") playerStore.addFireAbility();
+    else if (chip.name == "FreezeChip") playerStore.addFreezeAbility();
+    else if (chip.name == "GravityChip") playerStore.addGravityAbility();
+  },
+
+  onFireCollision(scene, player, playerStore) {
+    if (playerStore.fireAbility.isActive) return;
+
+    if (player.canMove) {
+      player.canMove = false;
+      scene.time.delayedCall(Config.BOUNCE_FROM_FIRE_DURATION_IN_MILLIS, () => (player.canMove = true));
+    }
+    player.body.velocity.x = (player.body.blocked.left - player.body.blocked.right) * Config.BOUNCE_FROM_FIRE;
   },
 
   movePlayerOnTopDown(player, userInput) {
@@ -79,6 +98,8 @@ export const playerComposition = {
   },
 
   movePlayerOnPlatformers(player, playerStore, userInput) {
+    if (!player.canMove) return;
+
     if (userInput.up.isDown && player.body.blocked.down && !playerStore.gravityAbility.isActive) {
       player.body.velocity.y = -player.speed * playerStore.jumpAbility.params.jumpMultiplicator;
     } else if (playerStore.gravityAbility.isActive) {

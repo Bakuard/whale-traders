@@ -87,7 +87,7 @@ export const usePlayer = defineStore("player", {
     deactivateAllAbilities() {
       this.switchAbility(null);
     },
-    switchAbility(player, abilityName) {
+    switchAbility(player, abilityName, fireCollider) {
       this.abilities.forEach((ability) => (ability.isActive = !ability.isActive && abilityName === ability.name));
 
       if (this.jumpAbility.isActive) {
@@ -113,8 +113,10 @@ export const usePlayer = defineStore("player", {
       }
 
       if (this.fireAbility.isActive) {
+        fireCollider.active = false;
         console.log("activate fire chip");
       } else {
+        fireCollider.active = true;
         console.log("deactivate fire chip");
       }
     },

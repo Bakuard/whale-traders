@@ -4,6 +4,7 @@ export const platformerComposition = {
   preloadLevel(scene) {
     scene.load.image("platform_tiles", "assets/levels/tiles/platforms/platform_tiles.png");
     scene.load.image("chip", "assets/img/chip.jpg");
+    scene.load.image("fire", "assets/levels/tiles/fire.png");
     scene.load.tilemapTiledJSON("platformer-tilemap", "assets/levels/tilemaps/platforms1.json");
     scene.load.image("mountBack", "assets/img/background/mount-back.png");
     scene.load.image("mountFront", "assets/img/background/mount-front.png");
@@ -19,8 +20,9 @@ export const platformerComposition = {
 
     const platformsLayer = tilemapComposition.createTileLayer(map, "platform_tiles", "platform_layer", [2]);
     const chipsLayer = tilemapComposition.createObjectLayer(scene, map, "chips_layer");
+    const fireLayer = tilemapComposition.createObjectLayer(scene, map, "fire_layer");
 
-    return [platformsLayer, chipsLayer, spawnPoint, backgroundNear, backgroundFar];
+    return [platformsLayer, chipsLayer, fireLayer, spawnPoint, backgroundNear, backgroundFar];
   },
 
   moveParallaxImages(camera, backgroundNear, backgroundFar, scene) {
