@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="100" tileheight="100" infinite="1" nextlayerid="7" nextobjectid="18">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="100" tileheight="100" infinite="1" nextlayerid="8" nextobjectid="24">
  <editorsettings>
   <export target="../public/assets/levels/tilemaps/platforms1.json" format="json"/>
  </editorsettings>
- <tileset firstgid="1" name="chip_tiles" tilewidth="49" tileheight="49" tilecount="1" columns="0">
+ <tileset firstgid="1" name="chip_tiles" tilewidth="49" tileheight="57" tilecount="2" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image source="../public/assets/img/chip.jpg" width="49" height="49"/>
   </tile>
+  <tile id="1">
+   <image source="../public/assets/img/memory-chip.png" width="46" height="57"/>
+  </tile>
  </tileset>
- <tileset firstgid="2" name="platform_tiles" tilewidth="100" tileheight="100" tilecount="5" columns="5">
+ <tileset firstgid="3" name="platform_tiles" tilewidth="100" tileheight="100" tilecount="5" columns="5">
   <image source="../public/assets/levels/tiles/platforms/platform_tiles.png" width="505" height="100"/>
  </tileset>
- <tileset firstgid="7" name="obstacle_tiles" tilewidth="100" tileheight="100" tilecount="1" columns="0">
+ <tileset firstgid="8" name="obstacle_tiles" tilewidth="100" tileheight="100" tilecount="1" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image source="../public/assets/levels/tiles/fire.png" width="100" height="100"/>
@@ -23,52 +26,94 @@
    <chunk x="0" y="-16" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,2,2,2,2,2,2,2,2,2,2,2,2,0,0,
+0,0,3,3,3,3,3,3,3,3,3,3,3,3,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,
-0,2,2,2,0,0,0,0,0,0,0,2,2,2,0,0,
+0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,
+0,3,3,3,0,0,0,0,0,0,0,3,3,3,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,0,
+0,0,0,0,0,0,0,0,0,0,0,0,3,3,3,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,2,2,2,0,0,0,0,0,0,0,2,2,2,0,0,
+0,3,3,3,0,0,0,0,0,0,0,3,3,3,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
 </chunk>
   </data>
  </layer>
+ <objectgroup id="7" name="memory_chip_layer">
+  <object id="18" name="MemoryChip1" gid="2" x="1157" y="-125" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="19" name="MemoryChip1" gid="2" x="1239" y="-128.5" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="20" name="MemoryChip1" gid="2" x="1317" y="-126.5" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="21" name="MemoryChip1" gid="2" x="1383" y="-122.5" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="7"/>
+   </properties>
+  </object>
+  <object id="22" name="MemoryChip1" gid="2" x="1453" y="-124.5" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="9"/>
+   </properties>
+  </object>
+  <object id="23" name="MemoryChip1" gid="2" x="1527" y="-116.5" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="10"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup id="3" name="chips_layer">
   <object id="2" name="JumpChip" type="Chip" gid="1" x="913.149" y="-128.697" width="49" height="49">
    <properties>
     <property name="imageName" value="chip"/>
+    <property name="recordNumber" type="int" value="6"/>
    </properties>
   </object>
   <object id="3" name="FreezeChip" type="Chip" gid="1" x="386.348" y="-120.621" width="49" height="49">
    <properties>
     <property name="imageName" value="chip"/>
+    <property name="recordNumber" type="int" value="2"/>
    </properties>
   </object>
   <object id="4" name="FireChip" type="Chip" gid="1" x="1062.62" y="-128.379" width="49" height="49">
    <properties>
     <property name="imageName" value="chip"/>
+    <property name="recordNumber" type="int" value="8"/>
    </properties>
   </object>
   <object id="5" name="GravityChip" type="Chip" gid="1" x="573.5" y="-125.712" width="49" height="49">
    <properties>
     <property name="imageName" value="chip"/>
+    <property name="recordNumber" type="int" value="4"/>
    </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="fire_layer">
-  <object id="7" type="Fire" gid="7" x="1246" y="-300" width="100" height="100">
+  <object id="7" type="Fire" gid="8" x="1246" y="-300" width="100" height="100">
    <properties>
     <property name="imageName" value="fire"/>
    </properties>
   </object>
-  <object id="10" type="Fire" gid="7" x="198" y="-100" width="100" height="100">
+  <object id="10" type="Fire" gid="8" x="198" y="-100" width="100" height="100">
    <properties>
     <property name="imageName" value="fire"/>
    </properties>

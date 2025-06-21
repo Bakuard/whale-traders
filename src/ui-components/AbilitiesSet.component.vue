@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { usePlayer } from "@/store/player.store";
 const playerStore = usePlayer();
-const color = playerStore.currentColor;
 
 const isActive = (ability) => {
   return ability.name === playerStore.currentAbility?.name;
@@ -14,8 +13,9 @@ const isActive = (ability) => {
       v-for="ability in playerStore.abilities"
       :key="ability.name"
       :prepend-icon="ability.icon"
-      :variant="isActive(ability) ? 'elevated' : 'outlined'" size="x-large"
-      :color="`${color}-darken-4`"
+      :variant="isActive(ability) ? 'elevated' : 'outlined'"
+      size="x-large"
+      :color="`${ability.color}-darken-4`"
     >
       {{ ability.key }}
     </v-chip>

@@ -7,20 +7,20 @@
                 {
                  "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0,
+                    0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0,
-                    0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0,
+                    0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0,
+                    0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0,
+                    0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                    3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
                  "height":16,
                  "width":16,
                  "x":0,
@@ -40,6 +40,155 @@
         }, 
         {
          "draworder":"topdown",
+         "id":7,
+         "name":"memory_chip_layer",
+         "objects":[
+                {
+                 "gid":2,
+                 "height":57,
+                 "id":18,
+                 "name":"MemoryChip1",
+                 "properties":[
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"memoryChip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":46,
+                 "x":1157,
+                 "y":-125
+                }, 
+                {
+                 "gid":2,
+                 "height":57,
+                 "id":19,
+                 "name":"MemoryChip1",
+                 "properties":[
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"memoryChip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":46,
+                 "x":1239,
+                 "y":-128.5
+                }, 
+                {
+                 "gid":2,
+                 "height":57,
+                 "id":20,
+                 "name":"MemoryChip1",
+                 "properties":[
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"memoryChip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":5
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":46,
+                 "x":1317,
+                 "y":-126.5
+                }, 
+                {
+                 "gid":2,
+                 "height":57,
+                 "id":21,
+                 "name":"MemoryChip1",
+                 "properties":[
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"memoryChip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":7
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":46,
+                 "x":1383,
+                 "y":-122.5
+                }, 
+                {
+                 "gid":2,
+                 "height":57,
+                 "id":22,
+                 "name":"MemoryChip1",
+                 "properties":[
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"memoryChip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":9
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":46,
+                 "x":1453,
+                 "y":-124.5
+                }, 
+                {
+                 "gid":2,
+                 "height":57,
+                 "id":23,
+                 "name":"MemoryChip1",
+                 "properties":[
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"memoryChip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":46,
+                 "x":1527,
+                 "y":-116.5
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":3,
          "name":"chips_layer",
          "objects":[
@@ -53,6 +202,11 @@
                          "name":"imageName",
                          "type":"string",
                          "value":"chip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":6
                         }],
                  "rotation":0,
                  "type":"Chip",
@@ -71,6 +225,11 @@
                          "name":"imageName",
                          "type":"string",
                          "value":"chip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":2
                         }],
                  "rotation":0,
                  "type":"Chip",
@@ -89,6 +248,11 @@
                          "name":"imageName",
                          "type":"string",
                          "value":"chip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":8
                         }],
                  "rotation":0,
                  "type":"Chip",
@@ -107,6 +271,11 @@
                          "name":"imageName",
                          "type":"string",
                          "value":"chip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":4
                         }],
                  "rotation":0,
                  "type":"Chip",
@@ -127,7 +296,7 @@
          "name":"fire_layer",
          "objects":[
                 {
-                 "gid":7,
+                 "gid":8,
                  "height":100,
                  "id":7,
                  "name":"",
@@ -145,7 +314,7 @@
                  "y":-300
                 }, 
                 {
-                 "gid":7,
+                 "gid":8,
                  "height":100,
                  "id":10,
                  "name":"",
@@ -286,8 +455,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":7,
- "nextobjectid":18,
+ "nextlayerid":8,
+ "nextobjectid":24,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
@@ -305,20 +474,26 @@
          "margin":0,
          "name":"chip_tiles",
          "spacing":0,
-         "tilecount":1,
-         "tileheight":49,
+         "tilecount":2,
+         "tileheight":57,
          "tiles":[
                 {
                  "id":0,
                  "image":"..\/..\/img\/chip.jpg",
                  "imageheight":49,
                  "imagewidth":49
+                }, 
+                {
+                 "id":1,
+                 "image":"..\/..\/img\/memory-chip.png",
+                 "imageheight":57,
+                 "imagewidth":46
                 }],
          "tilewidth":49
         }, 
         {
          "columns":5,
-         "firstgid":2,
+         "firstgid":3,
          "image":"..\/tiles\/platforms\/platform_tiles.png",
          "imageheight":100,
          "imagewidth":505,
@@ -331,7 +506,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":7,
+         "firstgid":8,
          "grid":
             {
              "height":1,
