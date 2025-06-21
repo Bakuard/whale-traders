@@ -5,7 +5,7 @@ import * as Phaser from "phaser";
 export const platformerComposition = {
   preloadLevel(scene) {
     scene.load.image("chip", "assets/img/chip.jpg");
-    scene.load.image("fire", "assets/levels/tiles/fire.png");
+    scene.load.atlas("fire", "assets/animation/fire.png", "assets/animation/fire.json");
     scene.load.spritesheet("platform_tiles", "assets/levels/tiles/platforms/platform_tiles.png", { frameWidth: 100, frameHeight: 100 });
     scene.load.tilemapTiledJSON("platformer-tilemap", "assets/levels/tilemaps/platforms1.json");
     scene.load.image("mountBack", "assets/img/background/mount-back.png");
