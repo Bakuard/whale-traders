@@ -166,8 +166,8 @@ export const playerComposition = {
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
       activateJumpChip: Phaser.Input.Keyboard.KeyCodes.ONE,
-      activateFireChip: Phaser.Input.Keyboard.KeyCodes.TWO,
-      activateGravityChip: Phaser.Input.Keyboard.KeyCodes.THREE,
+      activateGravityChip: Phaser.Input.Keyboard.KeyCodes.TWO,
+      activateFireChip: Phaser.Input.Keyboard.KeyCodes.THREE,
       activateFreezeChip: Phaser.Input.Keyboard.KeyCodes.FOUR,
     });
   },
