@@ -4,13 +4,22 @@ import * as Phaser from "phaser";
 
 export const platformerComposition = {
   preloadLevel(scene) {
-    scene.load.image("chip", "assets/img/chip.jpg");
-    scene.load.image("fire", "assets/levels/tiles/fire.png");
+    scene.load.image("chip", "assets/img/chip.png");
+    scene.load.atlas("fire", "assets/animation/fire.png", "assets/animation/fire.json");
     scene.load.spritesheet("platform_tiles", "assets/levels/tiles/platforms/platform_tiles.png", { frameWidth: 100, frameHeight: 100 });
     scene.load.tilemapTiledJSON("platformer-tilemap", "assets/levels/tilemaps/platforms1.json");
     scene.load.image("mountBack", "assets/img/background/mount-back.png");
     scene.load.image("mountFront", "assets/img/background/red-whale-platformer.png");
     scene.load.image("memoryChip", "assets/img/memory-chip.png");
+  },
+
+  crateAnimations(scene) {
+    this.fireAnimation = scene.anims.create({
+      key: "fire",
+      frames: scene.anims.generateFrameNames("fire", { start: 1, end: 4 }),
+      frameRate: 4,
+      repeat: -1,
+    });
   },
 
   createLevel(scene) {
@@ -21,9 +30,9 @@ export const platformerComposition = {
     const backgroundFar = scene.add.image(spawnPoint.x, spawnPoint.y, "mountBack").setScrollFactor(0);
     const backgroundNear = scene.add.image(spawnPoint.x, spawnPoint.y, "mountFront").setScrollFactor(0);
 
-    const platformsLayer = tilemapComposition.createTileLayer(map, "platform_tiles", "platform_layer", [3]);
+    const platformsLayer = tilemapComposition.createTileLayer(map, "platform_tiles", "platform_layer", [4]);
     const chipsLayer = tilemapComposition.createObjectLayerWithTexture(scene, map, "chips_layer");
-    const fireLayer = tilemapComposition.createObjectLayerWithSprite(scene, map, "fire_layer");
+    this.fireLayer = tilemapComposition.createObjectLayerWithSprite(scene, map, "fire_layer");
     this.movingPlatform = tilemapComposition.createObjectLayerWithTexture(scene, map, "moving_platform");
     this.movingPlatform.getChildren().forEach((platform) => {
       const start = tilemapComposition.getFromObjectLayer(map, "moving_platform_points", { movingPlatformOwner: platform.name, pointType: "start" });
@@ -35,7 +44,7 @@ export const platformerComposition = {
     });
     const memoryChipLayer = tilemapComposition.createObjectLayerWithSprite(scene, map, "memory_chip_layer");
 
-    return [platformsLayer, chipsLayer, fireLayer, this.movingPlatform, memoryChipLayer, spawnPoint, backgroundNear, backgroundFar];
+    return [platformsLayer, chipsLayer, this.fireLayer, this.movingPlatform, memoryChipLayer, spawnPoint, backgroundNear, backgroundFar];
   },
 
   moveParallaxImages(camera, backgroundNear, backgroundFar, scene) {
@@ -64,5 +73,10 @@ export const platformerComposition = {
         platform.targetPoint = platform.targetPoint === platform.end ? platform.start : platform.end;
       }
     }
+  },
+
+  refreshFireAnimation(playerStore) {
+    if (playerStore.freezeAbility.isActive) this.fireAnimation.pause();
+    else this.fireAnimation.resume();
   },
 };

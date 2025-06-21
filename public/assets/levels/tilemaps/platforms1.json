@@ -7,20 +7,20 @@
                 {
                  "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0,
+                    0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0,
-                    0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0,
+                    0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0,
+                    0, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0,
+                    0, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+                    4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
                  "height":16,
                  "width":16,
                  "x":0,
@@ -193,55 +193,9 @@
          "name":"chips_layer",
          "objects":[
                 {
-                 "gid":1,
-                 "height":49,
-                 "id":2,
-                 "name":"JumpChip",
-                 "properties":[
-                        {
-                         "name":"imageName",
-                         "type":"string",
-                         "value":"chip"
-                        }, 
-                        {
-                         "name":"recordNumber",
-                         "type":"int",
-                         "value":6
-                        }],
-                 "rotation":0,
-                 "type":"Chip",
-                 "visible":true,
-                 "width":49,
-                 "x":913.149,
-                 "y":-128.697
-                }, 
-                {
-                 "gid":1,
-                 "height":49,
-                 "id":3,
-                 "name":"FreezeChip",
-                 "properties":[
-                        {
-                         "name":"imageName",
-                         "type":"string",
-                         "value":"chip"
-                        }, 
-                        {
-                         "name":"recordNumber",
-                         "type":"int",
-                         "value":2
-                        }],
-                 "rotation":0,
-                 "type":"Chip",
-                 "visible":true,
-                 "width":49,
-                 "x":386.348,
-                 "y":-120.621
-                }, 
-                {
-                 "gid":1,
-                 "height":49,
-                 "id":4,
+                 "gid":3,
+                 "height":50,
+                 "id":24,
                  "name":"FireChip",
                  "properties":[
                         {
@@ -255,16 +209,39 @@
                          "value":8
                         }],
                  "rotation":0,
-                 "type":"Chip",
+                 "type":"",
                  "visible":true,
-                 "width":49,
-                 "x":1062.62,
-                 "y":-128.379
+                 "width":50,
+                 "x":1031,
+                 "y":-128.333333333333
                 }, 
                 {
-                 "gid":1,
-                 "height":49,
-                 "id":5,
+                 "gid":3,
+                 "height":50,
+                 "id":25,
+                 "name":"JumpChip",
+                 "properties":[
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"chip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":6
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":50,
+                 "x":905.666666666667,
+                 "y":-122.333333333333
+                }, 
+                {
+                 "gid":3,
+                 "height":50,
+                 "id":26,
                  "name":"GravityChip",
                  "properties":[
                         {
@@ -278,11 +255,34 @@
                          "value":4
                         }],
                  "rotation":0,
-                 "type":"Chip",
+                 "type":"",
                  "visible":true,
-                 "width":49,
-                 "x":573.5,
-                 "y":-125.712
+                 "width":50,
+                 "x":552.333333333333,
+                 "y":-115.666666666667
+                }, 
+                {
+                 "gid":3,
+                 "height":50,
+                 "id":27,
+                 "name":"FreezeChip",
+                 "properties":[
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"chip"
+                        }, 
+                        {
+                         "name":"recordNumber",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":50,
+                 "x":384.333333333333,
+                 "y":-110.333333333333
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -296,11 +296,16 @@
          "name":"fire_layer",
          "objects":[
                 {
-                 "gid":8,
+                 "gid":9,
                  "height":100,
                  "id":7,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"animation",
+                         "type":"string",
+                         "value":"fire"
+                        }, 
                         {
                          "name":"imageName",
                          "type":"string",
@@ -314,11 +319,16 @@
                  "y":-300
                 }, 
                 {
-                 "gid":8,
+                 "gid":9,
                  "height":100,
                  "id":10,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"animation",
+                         "type":"string",
+                         "value":"fire"
+                        }, 
                         {
                          "name":"imageName",
                          "type":"string",
@@ -456,7 +466,7 @@
          "y":0
         }],
  "nextlayerid":8,
- "nextobjectid":24,
+ "nextobjectid":28,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
@@ -475,25 +485,25 @@
          "name":"chip_tiles",
          "spacing":0,
          "tilecount":2,
-         "tileheight":57,
+         "tileheight":50,
          "tiles":[
-                {
-                 "id":0,
-                 "image":"..\/..\/img\/chip.jpg",
-                 "imageheight":49,
-                 "imagewidth":49
-                }, 
                 {
                  "id":1,
                  "image":"..\/..\/img\/memory-chip.png",
-                 "imageheight":57,
-                 "imagewidth":46
+                 "imageheight":50,
+                 "imagewidth":50
+                }, 
+                {
+                 "id":2,
+                 "image":"..\/..\/img\/chip.png",
+                 "imageheight":50,
+                 "imagewidth":50
                 }],
-         "tilewidth":49
+         "tilewidth":50
         }, 
         {
          "columns":5,
-         "firstgid":3,
+         "firstgid":4,
          "image":"..\/tiles\/platforms\/platform_tiles.png",
          "imageheight":100,
          "imagewidth":505,
@@ -506,7 +516,7 @@
         }, 
         {
          "columns":0,
-         "firstgid":8,
+         "firstgid":9,
          "grid":
             {
              "height":1,

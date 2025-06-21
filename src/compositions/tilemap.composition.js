@@ -51,6 +51,7 @@ function extractProperties(objMeta, obj, isTexture) {
     obj.displayWidth = objMeta.width;
     obj.displayHeight = objMeta.height;
   }
+  if (obj.animation) obj.play(obj.animation, true);
   obj.class = objMeta.type;
   obj.body?.setSize(objMeta.width, objMeta.height);
   obj.body?.reset(obj.x, obj.y);
