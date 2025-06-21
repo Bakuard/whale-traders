@@ -78,11 +78,11 @@
                 2,
                 3
             ],
-            "scale": 0.75,
-            "selectedLayer": 2,
+            "scale": 0.33,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 930,
-                "y": -148
+                "x": 310.60606060606074,
+                "y": -1066.6666666666667
             }
         },
         "platforms1.tmx#chip": {
@@ -94,6 +94,13 @@
             "scaleInEditor": 1
         },
         "platforms1.tmx#chips": {
+            "dynamicWrapping": true,
+            "scaleInEditor": 1
+        },
+        "platforms1.tmx#obstacle_tiles": {
+            "scaleInEditor": 1
+        },
+        "platforms1.tmx#obstacles_tiles": {
             "dynamicWrapping": true,
             "scaleInEditor": 1
         },
@@ -121,7 +128,7 @@
         }
     },
     "last.exportedFilePath": "D:/JS/whale-traders/public/assets/levels/tilemaps",
-    "last.imagePath": "D:/JS/whale-traders/public/assets/levels/tiles/platforms",
+    "last.imagePath": "D:/JS/whale-traders/public/assets/levels/tiles",
     "map.fixedSize": false,
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "json",
@@ -142,5 +149,5 @@
         "height": 100,
         "width": 100
     },
-    "tileset.type": 0
+    "tileset.type": 1
 }
