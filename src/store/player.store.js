@@ -73,52 +73,19 @@ export const usePlayer = defineStore("player", {
       this.lastVisitedIsland = islandName;
     },
     addJumpAbility() {
-      this.abilities.push(this.jumpAbility);
+      if (!this.abilities.find((ability) => ability === this.jumpAbility)) this.abilities.push(this.jumpAbility);
     },
     addFireAbility() {
-      this.abilities.push(this.fireAbility);
+      if (!this.abilities.find((ability) => ability === this.fireAbility)) this.abilities.push(this.fireAbility);
     },
     addGravityAbility() {
-      this.abilities.push(this.gravityAbility);
+      if (!this.abilities.find((ability) => ability === this.gravityAbility)) this.abilities.push(this.gravityAbility);
     },
     addFreezeAbility() {
-      this.abilities.push(this.freezeAbility);
+      if (!this.abilities.find((ability) => ability === this.freezeAbility)) this.abilities.push(this.freezeAbility);
     },
     deactivateAllAbilities() {
-      this.switchAbility(null);
-    },
-    switchAbility(player, abilityName, fireCollider) {
-      this.abilities.forEach((ability) => (ability.isActive = !ability.isActive && abilityName === ability.name));
-
-      if (this.jumpAbility.isActive) {
-        this.jumpAbility.params.jumpMultiplicator = Config.PLAYER_JUMP_MULTIPLICATOR_WITH_CHIP;
-        this.jumpAbility.params.fallMultiplicator = Config.PLAYER_FALL_MULTIPLICATOR_WITH_CHIP;
-      } else {
-        this.jumpAbility.params.jumpMultiplicator = Config.PLAYER_JUMP_MULTIPLICATOR;
-        this.jumpAbility.params.fallMultiplicator = Config.PLAYER_FALL_MULTIPLICATOR;
-      }
-
-      if (this.gravityAbility.isActive) {
-        player.body.allowGravity = false;
-        console.log("activate gravity chip");
-      } else {
-        player.body.allowGravity = true;
-        console.log("deactivate gravity chip");
-      }
-
-      if (this.freezeAbility.isActive) {
-        console.log("activate freeze chip");
-      } else {
-        console.log("deactivate freeze chip");
-      }
-
-      if (this.fireAbility.isActive) {
-        fireCollider.active = false;
-        console.log("activate fire chip");
-      } else {
-        fireCollider.active = true;
-        console.log("deactivate fire chip");
-      }
+      this.abilities.forEach((ability) => (ability.isActive = false));
     },
   },
 });

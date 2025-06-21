@@ -1,6 +1,5 @@
 import Phaser from "phaser";
 import * as Config from "@/configs/gameplay.config.js";
-import { BOUNCE_FROM_FIRE_DURATION_IN_MILLIS } from "@/configs/gameplay.config.js";
 
 export const playerComposition = {
   preloadPlayerAnimation(scene) {
@@ -52,20 +51,50 @@ export const playerComposition = {
   },
 
   switchChip(player, playerStore, userInput, fireCollider) {
+    let abilityName = null;
     if (Phaser.Input.Keyboard.JustDown(userInput.activateJumpChip)) {
-      playerStore.switchAbility(player, "jump", fireCollider);
+      abilityName = "jump";
     } else if (Phaser.Input.Keyboard.JustDown(userInput.activateFireChip)) {
-      playerStore.switchAbility(player, "fire", fireCollider);
+      abilityName = "fire";
     } else if (Phaser.Input.Keyboard.JustDown(userInput.activateGravityChip)) {
-      playerStore.switchAbility(player, "gravity", fireCollider);
+      abilityName = "gravity";
     } else if (Phaser.Input.Keyboard.JustDown(userInput.activateFreezeChip)) {
-      playerStore.switchAbility(player, "freeze", fireCollider);
+      abilityName = "freeze";
+    }
+
+    if (abilityName == null) return;
+
+    playerStore.abilities.forEach((ability) => (ability.isActive = !ability.isActive && abilityName === ability.name));
+
+    if (playerStore.jumpAbility.isActive) {
+      playerStore.jumpAbility.params.jumpMultiplicator = Config.PLAYER_JUMP_MULTIPLICATOR_WITH_CHIP;
+      playerStore.jumpAbility.params.fallMultiplicator = Config.PLAYER_FALL_MULTIPLICATOR_WITH_CHIP;
+    } else {
+      playerStore.jumpAbility.params.jumpMultiplicator = Config.PLAYER_JUMP_MULTIPLICATOR;
+      playerStore.jumpAbility.params.fallMultiplicator = Config.PLAYER_FALL_MULTIPLICATOR;
+    }
+
+    if (playerStore.gravityAbility.isActive) {
+      player.body.allowGravity = false;
+    } else {
+      player.body.allowGravity = true;
+    }
+
+    if (playerStore.freezeAbility.isActive) {
+      console.log("activate freeze chip");
+    } else {
+      console.log("deactivate freeze chip");
+    }
+
+    if (playerStore.fireAbility.isActive) {
+      fireCollider.active = false;
+    } else {
+      fireCollider.active = true;
     }
   },
 
   onChipOverlap(player, chip, playerStore) {
-    chip.setActive(false).setVisible(false);
-    chip.body.enable = false;
+    chip.destroy();
     if (chip.name == "JumpChip") playerStore.addJumpAbility();
     else if (chip.name == "FireChip") playerStore.addFireAbility();
     else if (chip.name == "FreezeChip") playerStore.addFreezeAbility();
@@ -97,6 +126,10 @@ export const playerComposition = {
     if (player.body.velocity.x !== 0) player.setFlipX(userInput.left.isDown);
   },
 
+  onMovingPlatformCollision(player, platform) {
+    if (player.body.blocked.down) player.currentPlatform = platform;
+  },
+
   movePlayerOnPlatformers(player, playerStore, userInput) {
     if (!player.canMove) return;
 
@@ -106,7 +139,13 @@ export const playerComposition = {
       player.body.velocity.y = Config.ANTI_GRAVITY;
     }
 
-    player.body.velocity.x = (userInput.right.isDown - userInput.left.isDown) * player.speed;
+    player.body.velocity.x = (userInput.right.isDown - userInput.left.isDown) * player.speed * !playerStore.gravityAbility.isActive;
+
+    if (player.currentPlatform) {
+      player.body.x += player.currentPlatform.velocity.x;
+      player.body.y += player.currentPlatform.velocity.y;
+      player.currentPlatform = null;
+    }
 
     if (player.body.velocity.equals(Phaser.Math.Vector2.ZERO)) {
       player.anims.play("player_wait", true);

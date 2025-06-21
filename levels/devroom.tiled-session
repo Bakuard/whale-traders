@@ -98,6 +98,7 @@
             "scaleInEditor": 1
         },
         "platforms1.tmx#obstacle_tiles": {
+            "dynamicWrapping": true,
             "scaleInEditor": 1
         },
         "platforms1.tmx#obstacles_tiles": {
@@ -137,6 +138,7 @@
     "openFiles": [
     ],
     "project": "devroom.tiled-project",
+    "property.type": "string",
     "recentFiles": [
         "platforms1.tmx",
         "devroom.tmx",
