@@ -17,12 +17,11 @@ export class PlatformerScene extends Phaser.Scene {
   }
 
   create() {
-    const [platformsLayer, chipsLayer, fireLayer, spawnPoint, backgroundNear, backgroundFar] = platformerComposition.createLevel(this);
+    const [platformsLayer, chipsLayer, fireLayer, movingPlatform, spawnPoint, backgroundNear, backgroundFar] = platformerComposition.createLevel(this);
 
     this.camera = this.cameras.main;
     this.backgroundNear = backgroundNear;
     this.backgroundFar = backgroundFar;
-    this.fireLayer = fireLayer;
 
     this.userInput = playerComposition.createUserInput(this);
     playerComposition.preparePlayerAnimation(this);
@@ -40,17 +39,19 @@ export class PlatformerScene extends Phaser.Scene {
     playerComposition.configureCameraFollow(this, this.player, this.cameras.main.width / 4, this.cameras.main.height / 4);
 
     this.physics.add.collider(this.player, platformsLayer);
+    this.physics.add.collider(this.player, movingPlatform, playerComposition.onMovingPlatformCollision);
     this.physics.add.overlap(this.player, chipsLayer, (player, chip) => {
       playerComposition.onChipOverlap(player, chip, this.playerStore);
     });
-    this.fireCollider = this.physics.add.collider(this.player, this.fireLayer, (player) =>
-      playerComposition.onFireCollision(this, player, this.playerStore)
-    );
+    this.fireCollider = this.physics.add.collider(this.player, fireLayer, (player) => {
+      playerComposition.onFireCollision(this, player, this.playerStore);
+    });
   }
 
-  update() {
+  update(time, delta) {
     playerComposition.movePlayerOnPlatformers(this.player, this.playerStore, this.userInput);
     platformerComposition.moveParallaxImages(this.camera, this.backgroundNear, this.backgroundFar, this);
     playerComposition.switchChip(this.player, this.playerStore, this.userInput, this.fireCollider);
+    platformerComposition.movePlatforms(delta, this.playerStore);
   }
 }
