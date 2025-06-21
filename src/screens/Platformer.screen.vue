@@ -56,7 +56,7 @@ onBeforeUnmount(() => game?.destroy(true));
       <AbilitiesSetComponent class="platformer-screen__abilities-wrapper" />
     </UiAnchor>
     <UiAnchor ref="alertContainer" target=".platformer-screen__game-wrapper" anchor="top-right">
-      <v-alert v-if="playerStore.alert.isShow" class="platformer-screen__alert" :color="`${color}-darken-3`" closable @close="playerStore.closeMessage">
+      <v-alert v-model="playerStore.alert.isShow" class="platformer-screen__alert" :color="`${color}-darken-3`" closable @close="playerStore.closeMessage">
         <div class="platformer-screen__alert-content">
           <span>{{ playerStore.alert.text }}</span>
         </div>

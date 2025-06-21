@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import "vuetify/styles";
 import { createVuetify } from "vuetify";
-import { VBtn, VChip, VExpansionPanel, VExpansionPanels, VAlert, VSnackbar } from "vuetify/components";
+import { VBtn, VChip, VExpansionPanel, VExpansionPanels, VAlert, VSnackbar, VExpansionPanelText } from "vuetify/components";
 import * as directives from "vuetify/directives";
 import "material-design-icons-iconfont/dist/material-design-icons.css";
 import { aliases, md } from "vuetify/iconsets/md";
@@ -13,13 +13,14 @@ const vuetify = createVuetify({
     VChip,
     VExpansionPanel,
     VExpansionPanels,
+    VExpansionPanelText,
     VAlert,
     VSnackbar,
   },
   directives,
   aliases,
   icons: {
-    defaultSet: 'md',
+    defaultSet: "md",
     aliases,
     sets: {
       md,

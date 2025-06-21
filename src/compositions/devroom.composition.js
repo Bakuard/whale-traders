@@ -15,7 +15,7 @@ export const devroomComposition = {
     this.worldCenter = tilemapComposition.getFromObjectLayer(map, "points_layer", { name: "worldCenter" });
     this.spawnPoint = tilemapComposition.getFromObjectLayer(map, "points_layer", { name: "spawnPoint" });
 
-    this.islandsLayer = tilemapComposition.createObjectLayer(scene, map, "islands_layer");
+    this.islandsLayer = tilemapComposition.createObjectLayerWithTexture(scene, map, "islands_layer");
     this.islandsLayer.children.iterate((island) => {
       island.distanceLength = new Phaser.Math.Vector2(island.x - this.worldCenter.x, island.y - this.worldCenter.y).length();
       island.currentAngle = Math.atan2(island.y - this.worldCenter.y, island.x - this.worldCenter.x);

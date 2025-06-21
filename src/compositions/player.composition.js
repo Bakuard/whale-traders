@@ -99,6 +99,8 @@ export const playerComposition = {
     else if (chip.name == "FireChip") playerStore.addFireAbility();
     else if (chip.name == "FreezeChip") playerStore.addFreezeAbility();
     else if (chip.name == "GravityChip") playerStore.addGravityAbility();
+    playerStore.journal[chip.recordNumber - 1].isActive = true;
+    playerStore.showMessage("New record in journal");
   },
 
   onFireCollision(scene, player, playerStore) {
@@ -128,6 +130,12 @@ export const playerComposition = {
 
   onMovingPlatformCollision(player, platform) {
     if (player.body.blocked.down) player.currentPlatform = platform;
+  },
+
+  onMemoryChipCollision(player, memoryChip, playerStore) {
+    playerStore.journal[memoryChip.recordNumber - 1].isActive = true;
+    memoryChip.destroy();
+    playerStore.showMessage("New record in journal");
   },
 
   movePlayerOnPlatformers(player, playerStore, userInput) {
@@ -166,8 +174,8 @@ export const playerComposition = {
       up: Phaser.Input.Keyboard.KeyCodes.W,
       down: Phaser.Input.Keyboard.KeyCodes.S,
       activateJumpChip: Phaser.Input.Keyboard.KeyCodes.ONE,
-      activateFireChip: Phaser.Input.Keyboard.KeyCodes.TWO,
-      activateGravityChip: Phaser.Input.Keyboard.KeyCodes.THREE,
+      activateGravityChip: Phaser.Input.Keyboard.KeyCodes.TWO,
+      activateFireChip: Phaser.Input.Keyboard.KeyCodes.THREE,
       activateFreezeChip: Phaser.Input.Keyboard.KeyCodes.FOUR,
     });
   },

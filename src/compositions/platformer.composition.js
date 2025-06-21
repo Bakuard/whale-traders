@@ -10,6 +10,7 @@ export const platformerComposition = {
     scene.load.tilemapTiledJSON("platformer-tilemap", "assets/levels/tilemaps/platforms1.json");
     scene.load.image("mountBack", "assets/img/background/mount-back.png");
     scene.load.image("mountFront", "assets/img/background/red-whale-platformer.png");
+    scene.load.image("memoryChip", "assets/img/memory-chip.png");
   },
 
   createLevel(scene) {
@@ -20,10 +21,10 @@ export const platformerComposition = {
     const backgroundFar = scene.add.image(spawnPoint.x, spawnPoint.y, "mountBack").setScrollFactor(0);
     const backgroundNear = scene.add.image(spawnPoint.x, spawnPoint.y, "mountFront").setScrollFactor(0);
 
-    const platformsLayer = tilemapComposition.createTileLayer(map, "platform_tiles", "platform_layer", [2]);
-    const chipsLayer = tilemapComposition.createObjectLayer(scene, map, "chips_layer");
-    const fireLayer = tilemapComposition.createObjectLayer(scene, map, "fire_layer");
-    this.movingPlatform = tilemapComposition.createObjectLayer(scene, map, "moving_platform");
+    const platformsLayer = tilemapComposition.createTileLayer(map, "platform_tiles", "platform_layer", [3]);
+    const chipsLayer = tilemapComposition.createObjectLayerWithTexture(scene, map, "chips_layer");
+    const fireLayer = tilemapComposition.createObjectLayerWithSprite(scene, map, "fire_layer");
+    this.movingPlatform = tilemapComposition.createObjectLayerWithTexture(scene, map, "moving_platform");
     this.movingPlatform.getChildren().forEach((platform) => {
       const start = tilemapComposition.getFromObjectLayer(map, "moving_platform_points", { movingPlatformOwner: platform.name, pointType: "start" });
       const end = tilemapComposition.getFromObjectLayer(map, "moving_platform_points", { movingPlatformOwner: platform.name, pointType: "end" });
@@ -32,8 +33,9 @@ export const platformerComposition = {
       platform.targetPoint = end;
       platform.velocity = new Phaser.Math.Vector2();
     });
+    const memoryChipLayer = tilemapComposition.createObjectLayerWithSprite(scene, map, "memory_chip_layer");
 
-    return [platformsLayer, chipsLayer, fireLayer, this.movingPlatform, spawnPoint, backgroundNear, backgroundFar];
+    return [platformsLayer, chipsLayer, fireLayer, this.movingPlatform, memoryChipLayer, spawnPoint, backgroundNear, backgroundFar];
   },
 
   moveParallaxImages(camera, backgroundNear, backgroundFar, scene) {

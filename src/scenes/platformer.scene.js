@@ -17,7 +17,7 @@ export class PlatformerScene extends Phaser.Scene {
   }
 
   create() {
-    const [platformsLayer, chipsLayer, fireLayer, movingPlatform, spawnPoint, backgroundNear, backgroundFar] = platformerComposition.createLevel(this);
+    const [platformsLayer, chipsLayer, fireLayer, movingPlatform, memoryChipLayer, spawnPoint, backgroundNear, backgroundFar] = platformerComposition.createLevel(this);
 
     this.camera = this.cameras.main;
     this.backgroundNear = backgroundNear;
@@ -46,6 +46,7 @@ export class PlatformerScene extends Phaser.Scene {
     this.fireCollider = this.physics.add.collider(this.player, fireLayer, (player) => {
       playerComposition.onFireCollision(this, player, this.playerStore);
     });
+    this.physics.add.collider(this.player, memoryChipLayer, (player, memoryChip) => playerComposition.onMemoryChipCollision(player, memoryChip, this.playerStore));
   }
 
   update(time, delta) {
