@@ -17,6 +17,7 @@ export class PlatformerScene extends Phaser.Scene {
   }
 
   create() {
+    platformerComposition.crateAnimations(this);
     const [platformsLayer, chipsLayer, fireLayer, movingPlatform, memoryChipLayer, spawnPoint, backgroundNear, backgroundFar] = platformerComposition.createLevel(this);
 
     this.camera = this.cameras.main;
@@ -54,5 +55,6 @@ export class PlatformerScene extends Phaser.Scene {
     platformerComposition.moveParallaxImages(this.camera, this.backgroundNear, this.backgroundFar, this);
     playerComposition.switchChip(this.player, this.playerStore, this.userInput, this.fireCollider);
     platformerComposition.movePlatforms(delta, this.playerStore);
+    platformerComposition.refreshFireAnimation(this.playerStore);
   }
 }

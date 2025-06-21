@@ -78,11 +78,11 @@
                 3,
                 2
             ],
-            "scale": 0.5,
-            "selectedLayer": 0,
+            "scale": 0.75,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 718,
-                "y": -720
+                "x": 771.9999999999999,
+                "y": -238.66666666666663
             }
         },
         "platforms1.tmx#chip": {
@@ -139,7 +139,7 @@
     "openFiles": [
     ],
     "project": "devroom.tiled-project",
-    "property.type": "int",
+    "property.type": "string",
     "recentFiles": [
         "platforms1.tmx",
         "devroom.tmx",
