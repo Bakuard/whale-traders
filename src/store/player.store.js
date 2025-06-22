@@ -1,10 +1,8 @@
 import { defineStore } from "pinia";
 import * as Config from "@/configs/gameplay.config.js";
-import { PLAYER_CURRENT_HEALTH } from "@/configs/gameplay.config.js";
 
 export const usePlayer = defineStore("player", {
   state: () => ({
-    currentHealth: PLAYER_CURRENT_HEALTH,
     currentLevel: "BlueWhale",
     abilities: [],
     journal: [
