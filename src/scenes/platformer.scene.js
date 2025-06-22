@@ -3,6 +3,8 @@ import { sceneComposition } from "@/compositions/scene.composition.js";
 import { playerComposition } from "@/compositions/player.composition.js";
 import { platformerComposition } from "@/compositions/platformer.composition.js";
 import * as Config from "@/configs/gameplay.config.js";
+import { backgroundComposition } from "@/compositions/background.composition.js";
+import { MOVING_WHALES } from "@/configs/gameplay.config.js";
 
 export class PlatformerScene extends Phaser.Scene {
   constructor(playerStore) {
@@ -12,17 +14,20 @@ export class PlatformerScene extends Phaser.Scene {
 
   preload() {
     sceneComposition.preload(this);
-    platformerComposition.preloadLevel(this, `assets/levels/tilemaps/${this.playerStore.lastVisitedIsland}.json`);
+    platformerComposition.preloadLevel(this, this.playerStore.currentColor, `assets/levels/tilemaps/${this.playerStore.lastVisitedIsland}.json`);
+    platformerComposition.preloadSkyWhales(this, MOVING_WHALES[this.playerStore.currentColor]);
     playerComposition.preloadPlayerAnimation(this);
+    backgroundComposition.preloadBackgroundImage(this, "assets/img/background/sky3.png");
   }
 
   create() {
+    this.background = backgroundComposition.createBackgroundImage(this, this.cameras.main.width, this.cameras.main.height);
+    this.skyWhales = platformerComposition.createSkyWhales(this, MOVING_WHALES[this.playerStore.currentColor]);
     platformerComposition.crateAnimations(this);
-    const [platformsLayer, chipsLayer, fireLayer, movingPlatform, memoryChipLayer, spawnPoint, backgroundNear, backgroundFar] = platformerComposition.createLevel(this);
+    const [platformsLayer, chipsLayer, fireLayer, movingPlatform, memoryChipLayer, spawnPoint, surface] = platformerComposition.createLevel(this);
 
     this.camera = this.cameras.main;
-    this.backgroundNear = backgroundNear;
-    this.backgroundFar = backgroundFar;
+    this.surface = surface;
 
     this.userInput = playerComposition.createUserInput(this);
     playerComposition.preparePlayerAnimation(this);
@@ -52,7 +57,8 @@ export class PlatformerScene extends Phaser.Scene {
 
   update(time, delta) {
     playerComposition.movePlayerOnPlatformers(this.player, this.playerStore, this.userInput);
-    platformerComposition.moveParallaxImages(this.camera, this.backgroundNear, this.backgroundFar, this);
+    platformerComposition.moveParallaxImages(this.camera, this.surface, this);
+    platformerComposition.moveSkyWhales(this, this.skyWhales, delta);
     playerComposition.switchChip(this.player, this.playerStore, this.userInput, this.fireCollider);
     platformerComposition.movePlatforms(delta, this.playerStore);
     platformerComposition.refreshFireAnimation(this.playerStore);

@@ -14,7 +14,7 @@ export class DevroomScene extends Phaser.Scene {
   preload() {
     sceneComposition.preload(this);
     shipComposition.preloadShipAnimation(this);
-    backgroundComposition.preloadBackgroundImage(this);
+    backgroundComposition.preloadBackgroundImage(this, "assets/img/background/star_sky.png");
     devroomComposition.preloadLevel(this);
   }
 
