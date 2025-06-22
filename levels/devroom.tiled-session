@@ -18,11 +18,19 @@
             "scaleInDock": 1
         },
         "amber-whale-space.tmx": {
-            "scale": 0.70240625,
+            "expandedObjectLayers": [
+                7,
+                2,
+                4,
+                5,
+                3,
+                6
+            ],
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 800.1067758152778,
-                "y": -800.1067758152778
+                "x": 922,
+                "y": -1641.333333333333
             }
         },
         "amber-whale-space.tmx#chip_tiles": {
@@ -36,14 +44,23 @@
             "scaleInDock": 1
         },
         "cyan-whale-space.tmx": {
-            "scale": 0.70240625,
-            "selectedLayer": 0,
+            "expandedObjectLayers": [
+                7,
+                2,
+                4,
+                5,
+                3,
+                6
+            ],
+            "scale": 0.5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 800.1067758152778,
-                "y": -800.1067758152778
+                "x": 870,
+                "y": -1288
             }
         },
         "cyan-whale-space.tmx#chip_tiles": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "cyan-whale-space.tmx#obstacle_tiles": {
@@ -58,11 +75,11 @@
             "expandedObjectLayers": [
                 3
             ],
-            "scale": 0.125,
+            "scale": 0.25,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -104,
-                "y": 256
+                "x": 422,
+                "y": -956
             }
         },
         "devroom.tmx#islands_tiles": {
@@ -96,11 +113,11 @@
             "expandedObjectLayers": [
                 5
             ],
-            "scale": 0.70240625,
-            "selectedLayer": 5,
+            "scale": 0.5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 800.1067758152778,
-                "y": -800.1067758152778
+                "x": 782,
+                "y": -1504
             }
         },
         "green-whale-space.tmx#chip_tiles": {
@@ -111,14 +128,23 @@
             "scaleInDock": 1
         },
         "green-whale-space.tmx#platform_tiles": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "indigo-whale-space.tmx": {
-            "scale": 0.70240625,
-            "selectedLayer": 0,
+            "expandedObjectLayers": [
+                7,
+                2,
+                4,
+                5,
+                3,
+                6
+            ],
+            "scale": 0.5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 800.1067758152778,
-                "y": -800.1067758152778
+                "x": 688,
+                "y": -1196
             }
         },
         "indigo-whale-space.tmx#chip_tiles": {
@@ -218,11 +244,19 @@
             }
         },
         "red-whale-space.tmx": {
-            "scale": 0.70240625,
-            "selectedLayer": 0,
+            "expandedObjectLayers": [
+                7,
+                2,
+                4,
+                5,
+                3,
+                6
+            ],
+            "scale": 0.33,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 800.1067758152778,
-                "y": -800.1067758152778
+                "x": 727.2727272727273,
+                "y": -1024.2424242424242
             }
         },
         "red-whale-space.tmx#chip_tiles": {
@@ -269,10 +303,10 @@
     "recentFiles": [
         "devroom.tmx",
         "red-whale-space.tmx",
-        "amber-whale-space.tmx",
-        "cyan-whale-space.tmx",
         "indigo-whale-space.tmx",
         "green-whale-space.tmx",
+        "cyan-whale-space.tmx",
+        "amber-whale-space.tmx",
         "platforms1.tmx",
         "green-whale-space-map.tmj",
         "platforms2.tmj",
