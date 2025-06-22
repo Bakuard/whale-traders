@@ -20,3 +20,10 @@ export const ANTI_GRAVITY = -80;
 export const BOUNCE_FROM_FIRE = 200;
 export const BOUNCE_FROM_FIRE_DURATION_IN_MILLIS = 250;
 export const MOVABLE_PLATFORM_SPEED = 50;
+export const MOVING_WHALES = {
+  green: ["amber", "cyan", "red", "indigo"],
+  indigo: ["amber", "cyan", "red"],
+  red: ["amber", "cyan"],
+  cyan: ["amber"],
+  amber: [],
+};

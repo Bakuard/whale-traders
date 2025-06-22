@@ -83,7 +83,7 @@ export const usePlayer = defineStore("player", {
       text: "New record was added in journal",
     },
     currentColor: "amber",
-    lastVisitedIsland: null,
+    lastVisitedIsland: "green",
     jumpAbility: {
       name: "jump",
       isActive: false,

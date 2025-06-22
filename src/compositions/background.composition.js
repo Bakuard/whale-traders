@@ -1,6 +1,6 @@
 export const backgroundComposition = {
-  preloadBackgroundImage(scene) {
-    scene.load.image("background_star_sky", "assets/img/background/star_sky.png");
+  preloadBackgroundImage(scene, textureUrl) {
+    scene.load.image("background_star_sky", textureUrl);
   },
 
   createBackgroundImage(scene, width, height) {
