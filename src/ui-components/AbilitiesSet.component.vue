@@ -13,9 +13,9 @@ const isActive = (ability) => {
       v-for="ability in playerStore.abilities"
       :key="ability.name"
       :prepend-icon="ability.icon"
-      :variant="isActive(ability) ? 'elevated' : 'outlined'"
+      variant="elevated"
       size="x-large"
-      :color="`${ability.color}-darken-4`"
+      :color="isActive(ability) ? 'yellow-darken-4' : `${ability.color}-darken-4`"
     >
       {{ ability.key }}
     </v-chip>

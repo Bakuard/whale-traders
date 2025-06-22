@@ -95,8 +95,8 @@ export const usePlayer = defineStore("player", {
         fallMultiplicator: Config.PLAYER_FALL_MULTIPLICATOR,
       },
     },
-    gravityAbility: { name: "gravity", isActive: false, key: "2", icon: "arrow_upward", color: "indigo" },
-    fireAbility: { name: "fire", isActive: false, key: "3", icon: "local_fire_department", color: "red" },
+    gravityAbility: { name: "gravity", isActive: false, key: "3", icon: "arrow_upward", color: "indigo" },
+    fireAbility: { name: "fire", isActive: false, key: "2", icon: "local_fire_department", color: "red" },
     freezeAbility: { name: "freeze", isActive: false, key: "4", icon: "pause_circle", color: "cyan" },
   }),
   getters: {
