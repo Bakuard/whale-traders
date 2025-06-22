@@ -3,11 +3,11 @@ import * as Config from "@/configs/gameplay.config.js";
 import * as Phaser from "phaser";
 
 export const platformerComposition = {
-  preloadLevel(scene) {
+  preloadLevel(scene, tilemapPath) {
     scene.load.image("chip", "assets/img/chip.png");
     scene.load.atlas("fire", "assets/animation/fire.png", "assets/animation/fire.json");
     scene.load.spritesheet("platform_tiles", "assets/levels/tiles/platforms/platform_tiles.png", { frameWidth: 100, frameHeight: 100 });
-    scene.load.tilemapTiledJSON("platformer-tilemap", "assets/levels/tilemaps/platforms1.json");
+    scene.load.tilemapTiledJSON("platformer-tilemap", tilemapPath);
     scene.load.image("mountBack", "assets/img/background/mount-back.png");
     scene.load.image("mountFront", "assets/img/background/red-whale-platformer.png");
     scene.load.image("memoryChip", "assets/img/memory-chip.png");
@@ -30,7 +30,7 @@ export const platformerComposition = {
     const backgroundFar = scene.add.image(spawnPoint.x, spawnPoint.y, "mountBack").setScrollFactor(0);
     const backgroundNear = scene.add.image(spawnPoint.x, spawnPoint.y, "mountFront").setScrollFactor(0);
 
-    const platformsLayer = tilemapComposition.createTileLayer(map, "platform_tiles", "platform_layer", [4]);
+    const platformsLayer = tilemapComposition.createTileLayer(map, "platform_tiles", "platform_layer", [1, 2, 3, 4, 5, 6, 7, 8, 9]);
     const chipsLayer = tilemapComposition.createObjectLayerWithTexture(scene, map, "chips_layer");
     this.fireLayer = tilemapComposition.createObjectLayerWithSprite(scene, map, "fire_layer");
     this.movingPlatform = tilemapComposition.createObjectLayerWithTexture(scene, map, "moving_platform");

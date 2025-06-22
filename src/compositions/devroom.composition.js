@@ -4,8 +4,11 @@ import Phaser from "phaser";
 
 export const devroomComposition = {
   preloadLevel(scene) {
-    scene.load.image("island-grass-big", "assets/levels/tiles/island-grass-big.png");
-    scene.load.image("island-ground-big", "assets/levels/tiles/island-ground-big.png");
+    scene.load.image("green-whale-space", "assets/img/whales/green-whale-space.png");
+    scene.load.image("indigo-whale-space", "assets/img/whales/indigo-whale-space.png");
+    scene.load.image("red-whale-space", "assets/img/whales/red-whale-space.png");
+    scene.load.image("cyan-whale-space", "assets/img/whales/cyan-whale-space.png");
+    scene.load.image("amber-whale-space", "assets/img/whales/amber-whale-space.png");
     scene.load.tilemapTiledJSON("devroom-tilemap", "assets/levels/tilemaps/devroom.json");
   },
 
@@ -15,7 +18,7 @@ export const devroomComposition = {
     this.worldCenter = tilemapComposition.getFromObjectLayer(map, "points_layer", { name: "worldCenter" });
     this.spawnPoint = tilemapComposition.getFromObjectLayer(map, "points_layer", { name: "spawnPoint" });
 
-    this.islandsLayer = tilemapComposition.createObjectLayerWithTexture(scene, map, "islands_layer");
+    this.islandsLayer = tilemapComposition.createObjectLayerWithSprite(scene, map, "islands_layer");
     this.islandsLayer.children.iterate((island) => {
       island.distanceLength = new Phaser.Math.Vector2(island.x - this.worldCenter.x, island.y - this.worldCenter.y).length();
       island.currentAngle = Math.atan2(island.y - this.worldCenter.y, island.x - this.worldCenter.x);
@@ -31,7 +34,9 @@ export const devroomComposition = {
       island.currentAngle += island.angularSpeed * (timeDelta / 1000);
       island.x = this.worldCenter.x + Math.cos(island.currentAngle) * island.distanceLength;
       island.y = this.worldCenter.y + Math.sin(island.currentAngle) * island.distanceLength;
-      island.body.updateFromGameObject();
+      island.angle = Phaser.Math.RadToDeg(island.currentAngle) - 90;
+      island.body.x = island.x - island.body.width / 2;
+      island.body.y = island.y - island.body.height / 2;
     });
   },
 
@@ -41,6 +46,7 @@ export const devroomComposition = {
       if (isOverlap) {
         if (!playerStore.getLastVisitedIsland) {
           playerStore.setLastVisitedIsland(island.name);
+          playerStore.currentColor = island.color;
           playerStore.showMessage("Land on an island?", true);
         }
         return;

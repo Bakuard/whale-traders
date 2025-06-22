@@ -8,40 +8,119 @@
          "name":"islands_layer",
          "objects":[
                 {
-                 "gid":1,
-                 "height":512,
-                 "id":5,
-                 "name":"islandGrass",
+                 "gid":5,
+                 "height":395,
+                 "id":10,
+                 "name":"green-whale-space",
                  "properties":[
+                        {
+                         "name":"color",
+                         "type":"string",
+                         "value":"green"
+                        }, 
                         {
                          "name":"imageName",
                          "type":"string",
-                         "value":"island-grass-big"
+                         "value":"green-whale-space"
                         }],
                  "rotation":0,
-                 "type":"Island",
+                 "type":"",
                  "visible":true,
-                 "width":512,
-                 "x":-2,
-                 "y":510
+                 "width":683,
+                 "x":203,
+                 "y":822
                 }, 
                 {
-                 "gid":2,
-                 "height":512,
-                 "id":6,
-                 "name":"islandGround",
+                 "gid":6,
+                 "height":395,
+                 "id":11,
+                 "name":"indigo-whale-space",
                  "properties":[
+                        {
+                         "name":"color",
+                         "type":"string",
+                         "value":"indigo"
+                        }, 
                         {
                          "name":"imageName",
                          "type":"string",
-                         "value":"island-ground-big"
+                         "value":"indigo-whale-space"
                         }],
                  "rotation":0,
-                 "type":"Island",
+                 "type":"",
                  "visible":true,
-                 "width":512,
-                 "x":1022,
-                 "y":516
+                 "width":683,
+                 "x":232.697,
+                 "y":-517.879
+                }, 
+                {
+                 "gid":7,
+                 "height":395,
+                 "id":12,
+                 "name":"red-whale-space",
+                 "properties":[
+                        {
+                         "name":"color",
+                         "type":"string",
+                         "value":"red"
+                        }, 
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"red-whale-space"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":683,
+                 "x":227,
+                 "y":-1386
+                }, 
+                {
+                 "gid":4,
+                 "height":395,
+                 "id":13,
+                 "name":"cyan-whale-space",
+                 "properties":[
+                        {
+                         "name":"color",
+                         "type":"string",
+                         "value":"cyan"
+                        }, 
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"cyan-whale-space"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":683,
+                 "x":219,
+                 "y":-2186
+                }, 
+                {
+                 "gid":3,
+                 "height":395,
+                 "id":14,
+                 "name":"amber-whale-space",
+                 "properties":[
+                        {
+                         "name":"color",
+                         "type":"string",
+                         "value":"amber"
+                        }, 
+                        {
+                         "name":"imageName",
+                         "type":"string",
+                         "value":"amber-whale-space"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":683,
+                 "x":227,
+                 "y":-3074
                 }],
          "opacity":1,
          "properties":[
@@ -81,8 +160,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":192,
-                 "y":164
+                 "x":718.788,
+                 "y":400
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -91,7 +170,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":10,
+ "nextobjectid":15,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
@@ -125,6 +204,53 @@
                  "imagewidth":512
                 }],
          "tilewidth":512
+        }, 
+        {
+         "columns":0,
+         "firstgid":3,
+         "grid":
+            {
+             "height":1,
+             "orientation":"orthogonal",
+             "width":1
+            },
+         "margin":0,
+         "name":"whale_tiles",
+         "spacing":0,
+         "tilecount":5,
+         "tileheight":395,
+         "tiles":[
+                {
+                 "id":0,
+                 "image":"..\/..\/img\/whales\/amber-whale-space.png",
+                 "imageheight":395,
+                 "imagewidth":683
+                }, 
+                {
+                 "id":1,
+                 "image":"..\/..\/img\/whales\/cyan-whale-space.png",
+                 "imageheight":395,
+                 "imagewidth":683
+                }, 
+                {
+                 "id":2,
+                 "image":"..\/..\/img\/whales\/green-whale-space.png",
+                 "imageheight":395,
+                 "imagewidth":683
+                }, 
+                {
+                 "id":3,
+                 "image":"..\/..\/img\/whales\/indigo-whale-space.png",
+                 "imageheight":395,
+                 "imagewidth":683
+                }, 
+                {
+                 "id":4,
+                 "image":"..\/..\/img\/whales\/red-whale-space.png",
+                 "imageheight":395,
+                 "imagewidth":683
+                }],
+         "tilewidth":683
         }],
  "tilewidth":60,
  "type":"map",

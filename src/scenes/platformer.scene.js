@@ -12,7 +12,7 @@ export class PlatformerScene extends Phaser.Scene {
 
   preload() {
     sceneComposition.preload(this);
-    platformerComposition.preloadLevel(this);
+    platformerComposition.preloadLevel(this, `assets/levels/tilemaps/${this.playerStore.lastVisitedIsland}.json`);
     playerComposition.preloadPlayerAnimation(this);
   }
 

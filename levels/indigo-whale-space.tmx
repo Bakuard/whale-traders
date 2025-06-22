@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="100" tileheight="100" infinite="1" nextlayerid="8" nextobjectid="28">
+ <editorsettings>
+  <export target="../public/assets/levels/tilemaps/platforms1.json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" name="chip_tiles" tilewidth="50" tileheight="50" tilecount="2" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="1">
+   <image source="../public/assets/img/memory-chip.png" width="50" height="50"/>
+  </tile>
+  <tile id="2">
+   <image source="../public/assets/img/chip.png" width="50" height="50"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="4" name="platform_tiles" tilewidth="100" tileheight="100" tilecount="5" columns="5">
+  <image source="../public/assets/levels/tiles/platforms/platform_tiles.png" width="505" height="100"/>
+ </tileset>
+ <tileset firstgid="9" name="obstacle_tiles" tilewidth="100" tileheight="100" tilecount="1" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="../public/assets/levels/tiles/fire.png" width="100" height="100"/>
+  </tile>
+ </tileset>
+ <layer id="1" name="platform_layer" width="30" height="20">
+  <data encoding="csv">
+   <chunk x="0" y="-16" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,5,5,5,5,5,5,5,5,5,5,5,5,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,
+0,5,5,5,0,0,0,0,0,0,0,5,5,5,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,5,5,5,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,5,5,5,0,0,0,0,0,0,0,5,5,5,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+</chunk>
+  </data>
+ </layer>
+ <objectgroup id="7" name="memory_chip_layer">
+  <object id="18" name="MemoryChip1" gid="2" x="1157" y="-125" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="19" name="MemoryChip1" gid="2" x="1239" y="-128.5" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="3"/>
+   </properties>
+  </object>
+  <object id="20" name="MemoryChip1" gid="2" x="1317" y="-126.5" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="21" name="MemoryChip1" gid="2" x="1383" y="-122.5" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="7"/>
+   </properties>
+  </object>
+  <object id="22" name="MemoryChip1" gid="2" x="1453" y="-124.5" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="9"/>
+   </properties>
+  </object>
+  <object id="23" name="MemoryChip1" gid="2" x="1527" y="-116.5" width="46" height="57">
+   <properties>
+    <property name="imageName" value="memoryChip"/>
+    <property name="recordNumber" type="int" value="10"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="chips_layer">
+  <object id="24" name="FireChip" gid="3" x="1031" y="-128.333" width="50" height="50">
+   <properties>
+    <property name="imageName" value="chip"/>
+    <property name="recordNumber" type="int" value="8"/>
+   </properties>
+  </object>
+  <object id="25" name="JumpChip" gid="3" x="905.667" y="-122.333" width="50" height="50">
+   <properties>
+    <property name="imageName" value="chip"/>
+    <property name="recordNumber" type="int" value="6"/>
+   </properties>
+  </object>
+  <object id="26" name="GravityChip" gid="3" x="552.333" y="-115.667" width="50" height="50">
+   <properties>
+    <property name="imageName" value="chip"/>
+    <property name="recordNumber" type="int" value="4"/>
+   </properties>
+  </object>
+  <object id="27" name="FreezeChip" gid="3" x="384.333" y="-110.333" width="50" height="50">
+   <properties>
+    <property name="imageName" value="chip"/>
+    <property name="recordNumber" type="int" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="fire_layer">
+  <object id="7" type="Fire" gid="9" x="1246" y="-300" width="100" height="100">
+   <properties>
+    <property name="animation" value="fire"/>
+    <property name="imageName" value="fire"/>
+   </properties>
+  </object>
+  <object id="10" type="Fire" gid="9" x="198" y="-100" width="100" height="100">
+   <properties>
+    <property name="animation" value="fire"/>
+    <property name="imageName" value="fire"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="2" name="points_layer">
+  <object id="1" name="spawnPoint" x="778" y="-125.5">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="moving_platform">
+  <object id="14" name="MovingPlatform1" type="MovingPlatform" x="100" y="-500" width="300" height="100">
+   <properties>
+    <property name="anchorY" value="bottom"/>
+    <property name="imageIndex" type="int" value="0"/>
+    <property name="imageName" value="platform_tiles"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="moving_platform_points">
+  <object id="15" type="MovingPlatformPoint" x="246" y="-438">
+   <properties>
+    <property name="movingPlatformOwner" value="MovingPlatform1"/>
+    <property name="pointType" value="start"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="16" type="MovingPlatformPoint" x="1036" y="-448">
+   <properties>
+    <property name="movingPlatformOwner" value="MovingPlatform1"/>
+    <property name="pointType" value="end"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>
