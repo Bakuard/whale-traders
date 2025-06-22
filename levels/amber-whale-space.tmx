@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="100" tileheight="100" infinite="1" nextlayerid="8" nextobjectid="28">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="100" tileheight="100" infinite="1" nextlayerid="8" nextobjectid="45">
  <editorsettings>
-  <export target="../public/assets/levels/tilemaps/platforms1.json" format="json"/>
+  <export target="../public/assets/levels/tilemaps/amber-whale-space.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" name="chip_tiles" tilewidth="50" tileheight="50" tilecount="2" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
@@ -23,98 +23,205 @@
  </tileset>
  <layer id="1" name="platform_layer" width="30" height="20">
   <data encoding="csv">
-   <chunk x="0" y="-16" width="16" height="16">
+   <chunk x="-16" y="-32" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,6,6,6,6,6,6,6,6,6,6,6,6,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,6,6,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6
+</chunk>
+   <chunk x="0" y="-32" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
 0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,
-0,6,6,6,0,0,0,0,0,0,0,6,6,6,0,0,
+0,6,6,6,0,0,0,0,0,0,0,0,0,0,0,0,
+0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,6,0,0,0,0,0,0,0,0,0,0,6,0,0,0,
+0,6,0,0,0,0,0,0,0,0,0,0,6,6,0,0,
+0,6,6,6,6,6,6,6,6,6,6,6,6,6,0,0,
+0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,6,0,0,0,0,0,0,6,6,0,0,0,0,0,0
+</chunk>
+   <chunk x="16" y="-32" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,6,6,6,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,6,6,6,0,0,0,0,0,0,0,6,6,6,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</chunk>
+   <chunk x="-16" y="-16" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6
+</chunk>
+   <chunk x="0" y="-16" width="16" height="16">
+0,6,0,0,0,0,0,0,6,0,0,0,0,0,0,0,
+0,6,0,0,0,0,0,0,6,6,0,0,0,0,0,0,
+0,6,0,0,0,0,0,0,6,0,0,0,0,0,0,0,
+0,6,0,0,0,0,0,0,6,6,0,0,0,0,0,0,
+0,6,0,0,0,0,0,0,0,0,0,0,0,0,6,6,
+0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,6,6,6,6,6,6,6,6,6,6,6,6,6,6,0,
+0,6,6,6,6,6,0,0,0,6,6,6,6,6,6,0,
+0,6,6,6,6,0,0,0,0,6,6,6,6,6,6,0,
+0,6,6,6,0,0,0,6,0,6,6,6,6,6,6,0,
+0,6,6,0,0,0,6,6,0,6,6,6,6,6,6,0,
+0,6,0,0,0,6,6,6,0,0,0,0,0,0,0,0,
+0,6,0,0,6,6,6,6,0,6,6,6,6,6,6,0,
+0,6,0,6,6,6,6,6,0,6,6,6,6,6,6,0,
+0,0,0,0,0,0,0,0,0,0,0,6,6,6,6,0,
 6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+</chunk>
+   <chunk x="16" y="-16" width="16" height="16">
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</chunk>
+   <chunk x="-16" y="0" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</chunk>
+   <chunk x="0" y="0" width="16" height="16">
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</chunk>
+   <chunk x="16" y="0" width="16" height="16">
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </chunk>
   </data>
  </layer>
  <objectgroup id="7" name="memory_chip_layer">
-  <object id="18" name="MemoryChip1" gid="2" x="1157" y="-125" width="46" height="57">
-   <properties>
-    <property name="imageName" value="memoryChip"/>
-    <property name="recordNumber" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="19" name="MemoryChip1" gid="2" x="1239" y="-128.5" width="46" height="57">
-   <properties>
-    <property name="imageName" value="memoryChip"/>
-    <property name="recordNumber" type="int" value="3"/>
-   </properties>
-  </object>
-  <object id="20" name="MemoryChip1" gid="2" x="1317" y="-126.5" width="46" height="57">
-   <properties>
-    <property name="imageName" value="memoryChip"/>
-    <property name="recordNumber" type="int" value="5"/>
-   </properties>
-  </object>
-  <object id="21" name="MemoryChip1" gid="2" x="1383" y="-122.5" width="46" height="57">
-   <properties>
-    <property name="imageName" value="memoryChip"/>
-    <property name="recordNumber" type="int" value="7"/>
-   </properties>
-  </object>
-  <object id="22" name="MemoryChip1" gid="2" x="1453" y="-124.5" width="46" height="57">
+  <object id="22" name="MemoryChip1" gid="2" x="121" y="-124.5" width="46" height="57">
    <properties>
     <property name="imageName" value="memoryChip"/>
     <property name="recordNumber" type="int" value="9"/>
    </properties>
   </object>
-  <object id="23" name="MemoryChip1" gid="2" x="1527" y="-116.5" width="46" height="57">
+  <object id="23" name="MemoryChip1" gid="2" x="421" y="-2412.5" width="46" height="57">
    <properties>
     <property name="imageName" value="memoryChip"/>
     <property name="recordNumber" type="int" value="10"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="3" name="chips_layer">
-  <object id="24" name="FireChip" gid="3" x="1031" y="-128.333" width="50" height="50">
-   <properties>
-    <property name="imageName" value="chip"/>
-    <property name="recordNumber" type="int" value="8"/>
-   </properties>
-  </object>
-  <object id="25" name="JumpChip" gid="3" x="905.667" y="-122.333" width="50" height="50">
-   <properties>
-    <property name="imageName" value="chip"/>
-    <property name="recordNumber" type="int" value="6"/>
-   </properties>
-  </object>
-  <object id="26" name="GravityChip" gid="3" x="552.333" y="-115.667" width="50" height="50">
-   <properties>
-    <property name="imageName" value="chip"/>
-    <property name="recordNumber" type="int" value="4"/>
-   </properties>
-  </object>
-  <object id="27" name="FreezeChip" gid="3" x="384.333" y="-110.333" width="50" height="50">
-   <properties>
-    <property name="imageName" value="chip"/>
-    <property name="recordNumber" type="int" value="2"/>
-   </properties>
-  </object>
- </objectgroup>
+ <objectgroup id="3" name="chips_layer"/>
  <objectgroup id="4" name="fire_layer">
-  <object id="7" type="Fire" gid="9" x="1246" y="-300" width="100" height="100">
+  <object id="7" type="Fire" gid="9" x="900" y="-398" width="100" height="100">
    <properties>
     <property name="animation" value="fire"/>
     <property name="imageName" value="fire"/>
    </properties>
   </object>
-  <object id="10" type="Fire" gid="9" x="198" y="-100" width="100" height="100">
+  <object id="28" type="Fire" gid="9" x="1004" y="-398" width="100" height="100">
+   <properties>
+    <property name="animation" value="fire"/>
+    <property name="imageName" value="fire"/>
+   </properties>
+  </object>
+  <object id="43" type="Fire" gid="9" x="898" y="-1502" width="100" height="100">
+   <properties>
+    <property name="animation" value="fire"/>
+    <property name="imageName" value="fire"/>
+   </properties>
+  </object>
+  <object id="44" type="Fire" gid="9" x="900" y="-1300" width="100" height="100">
    <properties>
     <property name="animation" value="fire"/>
     <property name="imageName" value="fire"/>
@@ -122,30 +229,72 @@
   </object>
  </objectgroup>
  <objectgroup id="2" name="points_layer">
-  <object id="1" name="spawnPoint" x="778" y="-125.5">
+  <object id="1" name="spawnPoint" x="48" y="-125.5">
    <point/>
   </object>
  </objectgroup>
  <objectgroup id="5" name="moving_platform">
-  <object id="14" name="MovingPlatform1" type="MovingPlatform" x="100" y="-500" width="300" height="100">
+  <object id="14" name="MovingPlatform1" type="MovingPlatform" x="900" y="-2400" width="300" height="100">
    <properties>
     <property name="anchorY" value="bottom"/>
-    <property name="imageIndex" type="int" value="0"/>
+    <property name="imageIndex" type="int" value="2"/>
+    <property name="imageName" value="platform_tiles"/>
+   </properties>
+  </object>
+  <object id="30" name="MovingPlatform2" type="MovingPlatform" x="1100" y="-1200" width="300" height="100">
+   <properties>
+    <property name="anchorY" value="bottom"/>
+    <property name="imageIndex" type="int" value="2"/>
+    <property name="imageName" value="platform_tiles"/>
+   </properties>
+  </object>
+  <object id="32" name="MovingPlatform3" type="MovingPlatform" x="1400" y="-2000" width="200" height="100">
+   <properties>
+    <property name="anchorY" value="bottom"/>
+    <property name="imageIndex" type="int" value="2"/>
     <property name="imageName" value="platform_tiles"/>
    </properties>
   </object>
  </objectgroup>
  <objectgroup id="6" name="moving_platform_points">
-  <object id="15" type="MovingPlatformPoint" x="246" y="-438">
+  <object id="15" type="MovingPlatformPoint" x="1053.7" y="-2340.33">
    <properties>
     <property name="movingPlatformOwner" value="MovingPlatform1"/>
     <property name="pointType" value="start"/>
    </properties>
    <point/>
   </object>
-  <object id="16" type="MovingPlatformPoint" x="1036" y="-448">
+  <object id="16" type="MovingPlatformPoint" x="548" y="-2336">
    <properties>
     <property name="movingPlatformOwner" value="MovingPlatform1"/>
+    <property name="pointType" value="end"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="33" type="MovingPlatformPoint" x="1246.85" y="-1139.06">
+   <properties>
+    <property name="movingPlatformOwner" value="MovingPlatform2"/>
+    <property name="pointType" value="start"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="34" type="MovingPlatformPoint" x="1248.12" y="-1544">
+   <properties>
+    <property name="movingPlatformOwner" value="MovingPlatform2"/>
+    <property name="pointType" value="end"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="35" type="MovingPlatformPoint" x="1501.48" y="-1938.61">
+   <properties>
+    <property name="movingPlatformOwner" value="MovingPlatform3"/>
+    <property name="pointType" value="start"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="36" type="MovingPlatformPoint" x="1498.15" y="-1544">
+   <properties>
+    <property name="movingPlatformOwner" value="MovingPlatform3"/>
     <property name="pointType" value="end"/>
    </properties>
    <point/>

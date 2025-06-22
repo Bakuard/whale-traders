@@ -26,6 +26,8 @@ export class DevroomScene extends Phaser.Scene {
     const shipStartX = currentIsland ? currentIsland.x : spawnPoint.x;
     const shipStartY = currentIsland ? currentIsland.y : spawnPoint.y;
 
+    this.playerStore.setLastVisitedIsland(null);
+
     this.ship = shipComposition.createShip(
       this,
       shipStartX,
