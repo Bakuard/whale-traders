@@ -9,6 +9,10 @@ export const routes = [
     component: Devroom,
   },
   {
+    path: "/devroom",
+    component: Devroom,
+  },
+  {
     path: "/platformer",
     component: Platformer,
   },
